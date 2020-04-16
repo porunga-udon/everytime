@@ -1,0 +1,50 @@
+.wrapper
+
+  .header
+    = render '/top'
+    .header__main
+      .header__main__left
+        .header__main__left--top
+          カロリー計算を
+          %p もっと簡単に・・・
+        .header__main__left--center
+          目標達成のお手伝い。
+          登録不要です。
+ 
+  .main
+    .main__top
+      コンテンツ
+    .main__center
+      .main__center__content
+        .main__center__content--image
+          = image_tag "dentaku.png", size:"140x140", class:"icon"
+        .main__center__content--name
+          カロリー計算
+        .main__center__content--text
+          一日の摂取カロリーを計算できます。
+        .main__center__content--btn
+          = link_to "#" do
+            %button.btn カロリー計算へ
+      .main__center__content
+        .main__center__content--image
+          = image_tag "goal.png", size:"140x140", class:"icon"
+        .main__center__content--name
+          目標達成
+        .main__center__content--text
+          理想の体重を目指すための計算ができます。
+        .main__center__content--btn
+          = link_to calculation_records_path do
+            %button.btn 目標達成へ
+      .main__center__content
+        .main__center__content--image
+          = image_tag "diary.png", size:"140x140", class:"icon"
+        .main__center__content--name
+          記録
+        .main__center__content--text
+          これまでの記録を見ることができます。
+        .main__center__content--btn
+          = link_to "#" do
+            %button.btn 記録へ
+ 
+= render '/footer'
+
