@@ -4,10 +4,6 @@
 
   .header {
     color: white;
-    &__top {
-      height: 30px;
-      background-color: rgb(12, 71, 158);
-    }
     &__main {
       height: 100%;
       background-color: $main_color;
@@ -32,15 +28,7 @@
         display: flex;
         padding-top: 200px;
         padding-left: 40px;
-        .btn {
-          color: white;
-          font-size: 20px;
-          height: 50px;
-          width: 150px;
-          background-color: $main_color;
-          border: solid 1px white;
-          margin-left: 50px;
-        }
+
       }
     }
   }
@@ -84,30 +72,16 @@
         }
         &--btn {
           margin-top: 40px;
+          
           .btn {
             width: 200px;
             height: 40px;
             font-size: 15px;
             line-height: 40px;
+            cursor: pointer;
           }
         }
       }
     }
-  }
-
-  .footer {
-    height: 100px;
-    background-color: $main_color;
-    &__title {
-      width: 100px;
-      margin: 0 auto;
-      padding-top: 30px;
-      font-size: 20px;
-      font-weight: bold;
-      .link {
-        text-decoration: none;
-        color: white;
-      }
-    }
-  }
+  } 
 }
