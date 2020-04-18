@@ -2,5 +2,64 @@
   = render '/top'
 
   .calc_main
+    .calc_main__top
+      目標達成
+    .calc_main__title
+      消費カロリー計算
+    .calc_main__content
+      .group
+        .group__text
+          性別
+        .group__form
+          %input{type:"radio", name:"gender", class:"man"}
+          男性
+          %input{type:"radio", name:"gender", class:"woman"}
+          女性
+      .group
+        .group__text
+          年齢
+        .group__form
+          = select_tag 'age', options_for_select(["--",*0..100]), class:"calc_select"
+      .group
+        .group__text
+          身長
+        .group__form
+          %input.calc_form{type:"text"} cm
+      .group
+        .group__text
+          体重
+        .group__form
+          %input.calc_form{type:"text"} kg
+      .group
+        .group__text
+          生活指数
+        .group__form
+          = select_tag 'age', options_for_select(["--",*1.3,1.5,1.7,1.9]), class:"calc_select"
+      .group
+        %button.calc-btn 計算する
+      .group
+        .group__text
+          消費カロリー
+        .group__form
+          %input.calc_result{type:"text"} kcal
+      .calc_main__title
+        摂取カロリー計算
+      .group
+        .group__text
+          目標体重
+        .group__form
+          %input.calc_form{type:"text"} kg
+      .group
+        .group__text
+          期間
+        .group__form
+          %input.calc_form{type:"text"} 日
+      .group
+        %button.calc-btn 計算する
+      .group
+        .group__text
+          目標摂取カロリー
+        .group__form
+          %input.calc_result{type:"text"} kcal
 
   = render "/footer"
