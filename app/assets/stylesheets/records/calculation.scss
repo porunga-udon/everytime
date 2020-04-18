@@ -2,10 +2,11 @@
   height: 100%;
   width: 100%;
   background-color: rgb(216, 214, 214);
+  padding: 50px 0;
   .calc_main {
     height: calc(100%-0px);
     width: 50%;
-    margin: 50px auto;
+    margin: 0 auto;
     background-color: $main_back;
     padding-bottom: 50px;
     &__top {
