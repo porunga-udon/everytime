@@ -4,12 +4,13 @@
   background-color: rgb(216, 214, 214);
   padding: 50px 0;
   .calc_main {
-    height: calc(100%-0px);
+    height: 100%;
     width: 50%;
     margin: 0 auto;
     background-color: $main_back;
     padding-bottom: 50px;
     &__top {
+      color: $font_color;
       height: 90px;
       line-height: 90px;
       text-align: center;
@@ -17,6 +18,7 @@
       font-size: 25px;
     }
     &__title {
+      color: $font_color;
       height: 70px;
       line-height: 70px;
       text-align: center;
@@ -25,6 +27,7 @@
       border-top: solid 1px rgb(180, 179, 179);
     }
     .group {
+      color: $font_color;
       margin: 30px auto 0;
       width: 170px;
       .calc-btn {
@@ -35,6 +38,7 @@
         font-weight: bold;
         font-size: 15px;
         background-color: white;
+        color: $font_color;
       }
       &__text {
         font-weight: bold;
