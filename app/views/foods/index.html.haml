@@ -1,3 +1,52 @@
 .foods_wrapper
 
   .foods_main
+    .foods_main__top
+      カロリー計算
+    %ul.foods_main__nutrition
+      - @nutrition.each do |nutrition|
+        %li.foods_main__nutrition__block
+          .ja
+            = nutrition[:ja]
+          .eng
+            = nutrition[:eng]
+    - @meals.each do |meal|
+      .foods_main_content
+        .foods_main__meal
+          = meal
+        %ul.foods_main__foods
+          - @foods.each do |food|
+            %li.foods_main__food
+              .foods_main__name
+                = food
+              %ul.foods_main__total__data
+                - @data.each do |data|
+                  %li.foods_main__total__data--num
+                    = data
+              .foods_main__remove
+                = link_to "#" do
+                  = icon('fas', 'minus-circle', class: 'remove')
+        .foods_main__total
+          .foods_main__total__add
+            = link_to "#",class:"add" do
+              フード追加
+          %ul.foods_main__total__data
+            - @data.each do |data|
+              %li.foods_main__total__data--num
+                = data
+    .foods_main__all
+      .foods_main__all__text
+        合計
+      %ul.foods_main__all__data
+        - @data.each do |data|
+          %li.foods_main__all__data--num
+            = data
+    %ul.foods_main__nutrition
+      - @nutrition.each do |nutrition|
+        %li.foods_main__nutrition__block
+          .ja
+            = nutrition[:ja]
+          .eng
+            = nutrition[:eng]
+
+      
