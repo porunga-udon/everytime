@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "users#index"
   resources :users, only: :index
 
-  resources :foods, only: :index
+  resources :foods, only: [:index,:create]
   
   resources :records, only: :calculation do
     collection do
