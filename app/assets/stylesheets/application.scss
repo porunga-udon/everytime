@@ -1,6 +1,9 @@
-@import "reset";
-@import "color";
-@import "top";
-@import "footer";
+@import "layouts/reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "layouts/color";
+@import "layouts/top";
+@import "layouts/footer";
 @import "users/index";
-@import "records/calculation"
+@import "records/calculation";
+@import "foods/index";

@@ -35,13 +35,14 @@
 
   .main {
     height: 100%;
-    background-color: rgb(226, 223, 223);
+    background-color: $sub_color;
     padding-bottom: 200px;
     &__top {
+      color: $font_color;
       height: 100px;
       padding-left: 300px;
       line-height: 170px;
-      font-size: 20px;
+      font-size: 25px;
       font-weight: bold;
     }
     &__center {
@@ -64,11 +65,13 @@
           }
         }
         &--name {
+          color: $font_color;
           margin-top: 40px;
           font-weight: bold;
         }
         &--text {
           margin-top: 20px;
+          color: $font_color;
         }
         &--btn {
           margin-top: 40px;
@@ -79,6 +82,7 @@
             font-size: 15px;
             line-height: 40px;
             cursor: pointer;
+            color: $font_color;
           }
         }
       }
