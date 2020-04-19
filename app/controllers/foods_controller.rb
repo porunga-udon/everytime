@@ -3,7 +3,10 @@ class FoodsController < ApplicationController
 
   def index
   end
-  
+
+  def create
+  end
+
   private
   def create_hash
     @meals = ["朝食","昼食","夕食","間食"]
