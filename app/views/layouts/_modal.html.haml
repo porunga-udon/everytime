@@ -1,0 +1,47 @@
+.modal-overlay
+
+.modal_foods
+  .modal_foods__top
+    フードを追加
+  %input.modal_foods__form{placeholder:"キーワード"}
+  %ul.modal_foods__nutrition
+    - @nutrition.each do |nutrition|
+      %li.modal_foods__nutrition--block
+        .ja
+          = nutrition[:ja]
+        .eng
+          = nutrition[:eng]
+  %ul.modal_foods__index
+    - @foods.each do |food|
+      %li.modal_foods__index__list
+        .modal_foods__index__list__name
+          = food
+        %ul.modal_foods__index__list__data
+          - @data.each do |data|
+            %li.modal_foods__index__list__data--num
+              = data
+        .modal_foods__index__list__remove
+          = link_to "#" do
+            = icon 'fas', 'plus-circle', class: 'remove'
+  .modal_foods__new
+    新しいフードを
+    = link_to "#", class:"link" do
+      データーベースに追加
+
+.modal_new
+  .modal_new__top
+    新しくフードを追加
+  .modal_new__main
+    .modal_new__main__text
+      名前
+    %input.modal_new__main__form
+    .modal_new__main__text
+      1人前の分量
+    %input.modal_new__main__form
+    - @nutrition.each do |nutrition|
+      .modal_new__main__text
+        = nutrition[:ja]
+      %input.modal_new__main__form
+  .modal_new__add
+    %button.modal_new__add__bottun
+      追加する
