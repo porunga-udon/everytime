@@ -5,6 +5,7 @@ class FoodsController < ApplicationController
   end
 
   def create
+    
   end
 
   private
