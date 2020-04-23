@@ -7,7 +7,7 @@
   position:fixed;
   top:0;
   left:0;
-  // display:none;
+  display:none;
 }
 
 .modal_foods {
@@ -114,7 +114,7 @@
   z-index: 3;
   top:0;
   left:0;
-  // display:none;
+  display:none;
   &__top {
     height: 40px;
     border-bottom: solid thin $sub_color;

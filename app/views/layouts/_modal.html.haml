@@ -15,11 +15,16 @@
     - @foods.each do |food|
       %li.modal_foods__index__list
         .modal_foods__index__list__name
-          = food
+          = food.name
         %ul.modal_foods__index__list__data
-          - @data.each do |data|
-            %li.modal_foods__index__list__data--num
-              = data
+          %li.modal_foods__index__list__data--num
+            = food.calorie
+          %li.modal_foods__index__list__data--num
+            = food.carbo
+          %li.modal_foods__index__list__data--num
+            = food.fat
+          %li.modal_foods__index__list__data--num
+            = food.protein
         .modal_foods__index__list__remove
           = link_to "#" do
             = icon 'fas', 'plus-circle', class: 'remove'
@@ -28,20 +33,34 @@
     = link_to "#", class:"link" do
       データーベースに追加
 
+-# %ul.modal_foods__index__list__data
+-#   - @data.each do |data|
+-#     %li.modal_foods__index__list__data--num
+-#       = data
+
+-# %li.modal_foods__index__list__data--num
+-#   = food.calorie
+-# %li.modal_foods__index__list__data--num
+-#   = food.carbo
+-# %li.modal_foods__index__list__data--num
+-#   = food.fat
+-# %li.modal_foods__index__list__data--num
+-#   = food.protein
+
 .modal_new
   .modal_new__top
     新しくフードを追加
   .modal_new__main
-    .modal_new__main__text
-      名前
-    %input.modal_new__main__form
-    .modal_new__main__text
-      1人前の分量
-    %input.modal_new__main__form
-    - @nutrition.each do |nutrition|
+    = form_with(model: @food) do |f|
       .modal_new__main__text
-        = nutrition[:ja]
-      %input.modal_new__main__form
-  .modal_new__add
-    %button.modal_new__add__bottun
-      追加する
+        名前
+      = f.text_field :name, class:"modal_new__main__form", value:"おにぎり"
+      .modal_new__main__text
+        1人前の分量
+      = f.text_field :quantity, class:"modal_new__main__form", value:"1個"
+      - @nutrition.each do |nutrition|
+        .modal_new__main__text
+          = nutrition[:ja]
+        = f.text_field nutrition[:column], class:"modal_new__main__form", value:20
+      .modal_new__add
+        = f.submit "追加する", class:"modal_new__add__bottun"
