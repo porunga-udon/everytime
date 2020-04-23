@@ -82,14 +82,15 @@
           border-right: solid thin $main_back;
         }
       }
-      &__remove {
+      &__plus {
         width: 30px;
         background-color: $food_back;
         text-align: center;
-        .remove {
+        .plus {
           font-size: 15px;
           text-decoration: none;
           color: rgb(21, 211, 245);
+          cursor: pointer;
         }
       }
     }
