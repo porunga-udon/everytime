@@ -25,9 +25,8 @@
             = food.fat
           %li.modal_foods__index__list__data--num
             = food.protein
-        .modal_foods__index__list__remove
-          = link_to "#" do
-            = icon 'fas', 'plus-circle', class: 'remove'
+        .modal_foods__index__list__plus
+          = icon 'fas', 'plus-circle', class: 'plus'
   .modal_foods__new
     新しいフードを
     = link_to "#", class:"link" do
