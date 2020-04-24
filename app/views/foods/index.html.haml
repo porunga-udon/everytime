@@ -32,7 +32,7 @@
           -#         = icon('fas', 'minus-circle', class: 'remove')
         .foods_main__total
           .foods_main__total__add
-            = link_to "#",class:"add", id:"add#{meal[:id]}" do
+            = link_to "#",class:"add", id:"#{meal[:id]}" do
               フード追加
           %ul.foods_main__total__data
             %li.foods_main__total__data--num
