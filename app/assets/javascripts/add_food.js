@@ -62,6 +62,13 @@ $(function() {
     $('.modal_foods').fadeOut("fast");
     $('.modal_new').fadeOut("fast");
   })
-
-
+  
+  // 削除ボタンクリック
+  $(document).on("click", ".fa-minus-circle", function(e){
+    e.preventDefault();
+    let removeList = $(this).parents('.foods_main__food')
+    $(removeList).remove();
+    $('.fa-minus-circle').off();
+  })
+  
 });
