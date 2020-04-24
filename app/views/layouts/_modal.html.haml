@@ -14,9 +14,9 @@
   %ul.modal_foods__index
     - @foods.each do |food|
       %li.modal_foods__index__list
-        .modal_foods__index__list__name
+        .modal_foods__index__list__name{id:"name#{food.id}"}
           = food.name
-        %ul.modal_foods__index__list__data
+        %ul.modal_foods__index__list__data{id:"nutrition#{food.id}"}
           %li.modal_foods__index__list__data--num
             = food.calorie
           %li.modal_foods__index__list__data--num
@@ -26,7 +26,7 @@
           %li.modal_foods__index__list__data--num
             = food.protein
         .modal_foods__index__list__plus
-          = icon 'fas', 'plus-circle', class: 'plus'
+          = icon 'fas', 'plus-circle', class:'plus', id:food.id
   .modal_foods__new
     新しいフードを
     = link_to "#", class:"link" do
