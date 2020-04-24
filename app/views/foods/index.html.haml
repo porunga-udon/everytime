@@ -19,13 +19,17 @@
           -#   %li.foods_main__food
           -#     .foods_main__name
           -#       = food.name
-              -# %ul.foods_main__total__data
-              -#   - @data.each do |data|
-              -#     %li.foods_main__total__data--num
-              -#       = data
-              -#   .foods_main__remove
-              -#     = link_to "#" do
-              -#       = icon('fas', 'minus-circle', class: 'remove')
+          -#     %ul.modal_foods__index__list__data{id:"nutrition#{food.id}"}
+          -#       %li.modal_foods__index__list__data--num
+          -#         = food.calorie
+          -#       %li.modal_foods__index__list__data--num
+          -#         = food.carbo
+          -#       %li.modal_foods__index__list__data--num
+          -#         = food.fat
+          -#       %li.modal_foods__index__list__data--num
+          -#         = food.protein
+          -#       .foods_main__remove
+          -#         = icon('fas', 'minus-circle', class: 'remove')
         .foods_main__total
           .foods_main__total__add
             = link_to "#",class:"add", id:"add#{meal[:id]}" do
