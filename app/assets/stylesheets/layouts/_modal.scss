@@ -12,7 +12,7 @@
 
 .modal_foods {
   color: black;
-  background-color: white;
+  background-color: $main_back;
   height: 600px;
   width: 50%;
   margin: 100px 0 0 360px;
@@ -107,7 +107,7 @@
 
 .modal_new {
   color: black;
-  background-color: white;
+  background-color: $main_back;
   height: 550px;
   width: 25%;
   margin: 120px 0 0 550px;
