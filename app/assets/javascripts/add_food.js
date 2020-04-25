@@ -7,17 +7,17 @@ $(function() {
                       <div class="foods_main__name">
                         ${data.name}
                       </div>
-                      <ul class="modal_foods__index__list__data" id="nutrition6">
-                        <li class="modal_foods__index__list__data--num">
+                      <ul class="foods_main__index" id="nutrition6">
+                        <li class="foods_main__index--num">
                           ${data.calorie}
                         </li>
-                        <li class="modal_foods__index__list__data--num">
+                        <li class="foods_main__index--num">
                           ${data.carbo}
                         </li>
-                        <li class="modal_foods__index__list__data--num">
+                        <li class="foods_main__index--num">
                           ${data.fat}
                         </li>
-                        <li class="modal_foods__index__list__data--num">
+                        <li class="foods_main__index--num">
                           ${data.protein}
                         </li>
                         <div class="foods_main__remove">
@@ -70,5 +70,10 @@ $(function() {
     $(removeList).remove();
     $('.fa-minus-circle').off();
   })
-  
+
+  // 追加されているフードの数値計算
+  let porunga = document.getElementsByClassName('modal_foods__index__list__data--num');
+  console.log(porunga);
+  let text = porunga[0].innerHTML
+  console.log(text);
 });
