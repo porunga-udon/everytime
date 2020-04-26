@@ -8,6 +8,10 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     @food.save
+    respond_to do |format|
+      format.html
+      format.json
+    end
     redirect_to foods_path
   end
 
