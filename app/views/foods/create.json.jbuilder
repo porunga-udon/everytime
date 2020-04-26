@@ -1,5 +1,6 @@
-json.food_name     @food.name
-json.food_calorie  @food.calorie
-json.food_carbo    @food.carbo
-json.food_fat      @food.fat
-json.food_protein  @food.protein
+json.id       @food.id
+json.name     @food.name
+json.calorie  @food.calorie
+json.carbo    @food.carbo
+json.fat      @food.fat
+json.protein  @food.protein
