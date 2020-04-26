@@ -29,7 +29,7 @@
           = icon 'fas', 'plus-circle', class:'plus', id:food.id
   .modal_foods__new
     新しいフードを
-    = link_to "#", class:"link" do
+    = link_to "#", class:"link", id:"moda_new_link" do
       データーベースに追加
 
 -# %ul.modal_foods__index__list__data
@@ -50,7 +50,7 @@
   .modal_new__top
     新しくフードを追加
   .modal_new__main
-    = form_with(model: @food) do |f|
+    = form_with(model: @food, id:"new_food_registration") do |f|
       .modal_new__main__text
         名前
       = f.text_field :name, class:"modal_new__main__form", value:"おにぎり"
