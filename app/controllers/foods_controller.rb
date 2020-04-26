@@ -7,12 +7,13 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
-    @food.save
-    respond_to do |format|
-      format.html
-      format.json
+    if @food.save
+      respond_to do |format|
+        format.json
+      end
+    else
+      redirect_to foods_path
     end
-    redirect_to foods_path
   end
 
   private
