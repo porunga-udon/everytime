@@ -1,10 +1,5 @@
 $(function() {
 
-  let meal1 = [] //朝食
-  let meal2 = [] //昼食
-  let meal3 = [] //夕食
-  let meal4 = [] //間食
-
   // フードリストの追加
   function buildHTML(data){
     let food_list = `
@@ -26,7 +21,7 @@ $(function() {
                           ${data.protein}
                         </li>
                         <div class="foods_main__remove">
-                          <i class="fas fa-minus-circle remove"></i>
+                          <i class="fas fa-minus-circle remove ${data.class}minus"></i>
                         </div>
                       </ul>
                     </li>
@@ -37,58 +32,51 @@ $(function() {
   // フード追加モーダル
   $('.add').click(function(e) {
     e.preventDefault();
-    let addId = this.id
-    let mealClass = 'meal' + addId
+    let id = this.id
     $('.modal-overlay').fadeIn("fast");
     $('.modal_foods').fadeIn("fast");
-    $('.fa-plus-circle').off();
+    $(document).off("click", ".fa-plus-circle");
     // 追加ボタンクリック
-    $('.fa-plus-circle').click(function(e){
+    $(document).on("click", ".fa-plus-circle", function(e){
       e.preventDefault();
-      let food_id = this.id
-      let nutrition = document.getElementById('nutrition' + food_id).children
+      let foodId = this.id
+      let nutrition = document.getElementById('nutrition' + foodId).children
       let data = {
-        class  :mealClass,
-        name   :document.getElementById('name' + food_id).innerHTML,
+        class  :'meal' + id,
+        name   :document.getElementById('name' + foodId).innerHTML,
         calorie:Number(nutrition[0].textContent),
         carbo  :Number(nutrition[1].textContent),
         fat    :Number(nutrition[2].textContent),
         protein:Number(nutrition[3].textContent),
       }
       // 追加先の食事のhtml
-      let mealId = '#foods' + addId
+      let mealId = '#foods' + id
       // htmlを作成
-      let food_list = buildHTML(data);
-      $(mealId).append(food_list);
-
-      // 追加する配列を指定
-      if (addId == 1) {
-        array = meal1
-      } else if (addId == 2) {
-        array = meal2
-      } else if (addId == 3) {
-        array = meal3
-      } else if (addId == 4) {
-        array = meal4
-      }
-
-      // 配列に追加されたフードのデータを追加
-      array.push(data);
-
-      // それぞれのデータを合計
-      let sumCalorie = array.reduce((p, x) => p + x.calorie, 0)
-      let sumCarbo   = array.reduce((p, x) => p + x.carbo, 0)
-      let sumFat     = array.reduce((p, x) => p + x.fat, 0)
-      let sumProtein = array.reduce((p, x) => p + x.protein, 0)
-
-      // 追加先の食事
-      let mealTotal = '#meal' + addId 
+      let foodList = buildHTML(data);
+      $(mealId).append(foodList);
+      // 数値の取得
+      let calories = document.getElementsByClassName(data.class + 'calorie')
+      let carbos   = document.getElementsByClassName(data.class + 'carbo')
+      let fats     = document.getElementsByClassName(data.class + 'fat')
+      let proteins = document.getElementsByClassName(data.class + 'protein')
+      // 合計を出す
+      let sumCalorie = 0
+      let sumCarbo   = 0
+      let sumFat     = 0
+      let sumProtein = 0
+      for (  let i = 0;  i < fats.length;  i++  ) {
+        sumCalorie += Number(calories[i].textContent)
+        sumCarbo += Number(carbos[i].textContent)
+        sumFat += Number(fats[i].textContent)
+        sumProtein += Number(proteins[i].textContent)
+       }
+      // 追加先の食事を指定
+      let mealTotal    = '#meal' + id 
       let calorieTotal = $(mealTotal).children('.data_calorie')
       let carboTotal   = $(mealTotal).children('.data_carbo')
       let fatTotal     = $(mealTotal).children('.data_fat')
       let proteinTotal = $(mealTotal).children('.data_protein')
-      
-      // 数値の合計部分
+      // 合計の表示
       $(calorieTotal).text(sumCalorie);
       $(carboTotal).text(sumCarbo);
       $(fatTotal).text(sumFat);
@@ -97,6 +85,7 @@ $(function() {
       // // フード追加ごとにモーダルを削除するか検討中
       // $('.modal-overlay').fadeOut("fast");
       // $('.modal_foods').fadeOut("fast");
+
     })
   })
   
@@ -107,12 +96,5 @@ $(function() {
     $('.modal_new').fadeOut("fast");
   })
   
-  // 削除ボタンクリック
-  $(document).on("click", ".fa-minus-circle", function(e){
-    e.preventDefault();
-    let removeList = $(this).parents('.foods_main__food')
-    $(removeList).remove();
-    $('.fa-minus-circle').off();
-  })
 
 });
