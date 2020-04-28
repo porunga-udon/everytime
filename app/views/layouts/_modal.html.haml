@@ -60,6 +60,6 @@
       - @nutrition.each do |nutrition|
         .modal_new__main__text
           = nutrition[:ja]
-        = f.text_field nutrition[:column], class:"modal_new__main__form"
+        = f.text_field nutrition[:column], class:"modal_new__main__form",value:0
       .modal_new__add
         = f.submit "追加する", class:"modal_new__add__bottun"
