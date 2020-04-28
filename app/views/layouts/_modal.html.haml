@@ -53,13 +53,13 @@
     = form_with(model: @food, local: true, id:"new_food_registration") do |f|
       .modal_new__main__text
         名前
-      = f.text_field :name, class:"modal_new__main__form", value:"おにぎり"
+      = f.text_field :name, class:"modal_new__main__form"
       .modal_new__main__text
         1人前の分量
-      = f.text_field :quantity, class:"modal_new__main__form", value:"1個"
+      = f.text_field :quantity, class:"modal_new__main__form"
       - @nutrition.each do |nutrition|
         .modal_new__main__text
           = nutrition[:ja]
-        = f.text_field nutrition[:column], class:"modal_new__main__form", value:20
+        = f.text_field nutrition[:column], class:"modal_new__main__form"
       .modal_new__add
         = f.submit "追加する", class:"modal_new__add__bottun"
