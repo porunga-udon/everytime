@@ -46,14 +46,9 @@
       .foods_main__all__text
         合計
       %ul.foods_main__all__data
-        %li.foods_main__all__data--num
-          0
-        %li.foods_main__all__data--num
-          0
-        %li.foods_main__all__data--num
-          0
-        %li.foods_main__all__data--num
-          0
+        -@nutrition.each do |nutrition|
+          %li.foods_main__all__data--num{id:"total_#{nutrition[:column]}"}
+            0
       -# %ul.foods_main__all__data
       -#   - @data.each do |data|
       -#     %li.foods_main__all__data--num
