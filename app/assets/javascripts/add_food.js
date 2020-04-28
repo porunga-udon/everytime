@@ -94,6 +94,7 @@ $(function() {
     $('.modal-overlay').fadeOut("fast");
     $('.modal_foods').fadeOut("fast");
     $('.modal_new').fadeOut("fast");
+    $('form')[0].reset();
   })
   
 
