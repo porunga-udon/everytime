@@ -2,15 +2,20 @@
   &__top {
     height: 30px;
     background-color: $top_color;
-    text-align: right;
     padding-right: 30px;
-  .link {
+    text-align: right;
+    .link {
       line-height: 30px;
       color: white;
       text-decoration: none;
       margin-right: 20px;
       cursor: pointer;
     }
-    
+    .home {
+      line-height: 30px;
+      color: white;
+      font-size: 20px;
+      padding-right: 20px;
+    }
   }
 }
