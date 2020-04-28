@@ -13,28 +13,30 @@
     - @meals.each do |meal|
       .foods_main_content
         .foods_main__meal
-          = meal
-        -# %ul.foods_main__foods
-        -#   - @foods.each do |food|
-        -#     %li.foods_main__food
-        -#       .foods_main__name
-        -#         = food.name
-        -#       %ul.foods_main__total__data
-        -#         - @data.each do |data|
-        -#           %li.foods_main__total__data--num
-        -#             = data
-        -#         .foods_main__remove
-        -#           = link_to "#" do
-        -#             = icon('fas', 'minus-circle', class: 'remove')
+          = meal[:name]
+        %ul{class:"foods_main__foods", id:"foods#{meal[:id]}"}
+          -# - @foods.each do |food|
+          -#   %li.foods_main__food
+          -#     .foods_main__name
+          -#       = food.name
+          -#     %ul.foods_main__index{id:"nutrition#{food.id}"}
+          -#       %li.foods_main__index--num
+          -#         = food.calorie
+          -#       %li.foods_main__index--num
+          -#         = food.carbo
+          -#       %li.foods_main__index--num
+          -#         = food.fat
+          -#       %li.foods_main__index--num
+          -#         = food.protein
+          -#       .foods_main__remove
+          -#         = icon('fas', 'minus-circle', class: 'remove')
         .foods_main__total
           .foods_main__total__add
-            = link_to "#",class:"add" do
+            = link_to "#",class:"add", id:"#{meal[:id]}" do
               フード追加
-          %ul.foods_main__total__data
-            %li.foods_main__total__data--num
-            %li.foods_main__total__data--num
-            %li.foods_main__total__data--num
-            %li.foods_main__total__data--num
+          %ul.foods_main__total__data{id:"meal#{meal[:id]}"}
+            - @nutrition.each do |nutrition|
+              %li.foods_main__total__data--num{class:"data_#{nutrition[:column]}"}
           -#       = data
           -# %ul.foods_main__total__data
           -#   - @data.each do |data|
@@ -44,14 +46,9 @@
       .foods_main__all__text
         合計
       %ul.foods_main__all__data
-        %li.foods_main__all__data--num
-          0
-        %li.foods_main__all__data--num
-          0
-        %li.foods_main__all__data--num
-          0
-        %li.foods_main__all__data--num
-          0
+        -@nutrition.each do |nutrition|
+          %li.foods_main__all__data--num{id:"total_#{nutrition[:column]}"}
+            0
       -# %ul.foods_main__all__data
       -#   - @data.each do |data|
       -#     %li.foods_main__all__data--num

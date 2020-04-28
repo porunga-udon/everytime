@@ -12,8 +12,8 @@
 
 .modal_foods {
   color: black;
-  background-color: white;
-  height: 600px;
+  background-color: $main_back;
+  height: 500px;
   width: 50%;
   margin: 100px 0 0 360px;
   position:fixed;
@@ -58,7 +58,7 @@
     }
   }
   &__index {
-    height: 300px;
+    height: 200px;
     overflow: scroll;
     &__list {
       width: 604px;
@@ -82,14 +82,15 @@
           border-right: solid thin $main_back;
         }
       }
-      &__remove {
+      &__plus {
         width: 30px;
         background-color: $food_back;
         text-align: center;
-        .remove {
+        .plus {
           font-size: 15px;
           text-decoration: none;
           color: rgb(21, 211, 245);
+          cursor: pointer;
         }
       }
     }
@@ -106,7 +107,7 @@
 
 .modal_new {
   color: black;
-  background-color: white;
+  background-color: $main_back;
   height: 550px;
   width: 25%;
   margin: 120px 0 0 550px;
