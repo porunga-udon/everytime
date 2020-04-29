@@ -50,4 +50,33 @@ $(function() {
 
   })
 
+  // 摂取カロリー
+  $('#intake_calorie').click(function() {
+
+    // 消費カロリーを取得
+    let BurnCalorie = Number($('#burn_result').val().replace(/[^0-9]/g, ''));
+
+    // 現在の体重を取得
+    let CurrentWeight = Number($('#weight_form').val());
+
+    // 目標体重を取得
+    let GoalWeight = Number($('#goal_weight').val());
+
+    // 目標達成に必要なカロリー
+    let NeededCalorie = (GoalWeight - CurrentWeight) * 7200
+
+    // 目標達成までの日数を取得
+    let GoalDays = $('#goal_day').val();
+
+    // 必要なカロリーを1日分に換算
+    let DayCalorie = NeededCalorie / GoalDays
+
+    // 1日の目標カロリーを計算
+    let IntakeCalorie = BurnCalorie + DayCalorie
+    
+    // 一日の目標カロリーを表示
+    $('#intake_result').val('約' + parseInt(IntakeCalorie, 10));
+
+  })
+
 })
