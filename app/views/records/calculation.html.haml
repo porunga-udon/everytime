@@ -25,7 +25,7 @@
         .group__text
           体重
         .group__form
-          %input.calc_form{type:"text", id:"weight_form"} kg
+          %input.calc_form{type:"number", id:"weight_form"} kg
       .group
         .group__text
           生活指数
@@ -35,9 +35,9 @@
         %button.calc-btn{id:"burn_calorie"} 計算する
       .group
         .group__text
-          消費カロリー
+          1日の消費カロリー
         .group__form
-          %input.calc_result{type:"text", id:"burn_result"} kcal
+          %input.calc_result{type:"number", id:"burn_result"} kcal
       
       -# 摂取カロリー計算-------------------------------
       .calc_main__goal
@@ -47,16 +47,16 @@
           .group__text
             目標体重
           .group__form
-            %input.calc_form{type:"text", id:"goal_weight"} kg
+            %input.calc_form{type:"number", id:"goal_weight"} kg
         .group
           .group__text
             期間
           .group__form
-            %input.calc_form{type:"text", id:"goal_day"} 日
+            %input.calc_form{type:"number", id:"goal_day"} 日
         .group
           %button.calc-btn{id:"intake_calorie"} 計算する
         .group
           .group__text
-            目標摂取カロリー
+            1日の目標カロリー
           .group__form
-            %input.calc_result{type:"text", id:"intake_result"} kcal
+            %input.calc_result{type:"number", id:"intake_result"} kcal

@@ -46,7 +46,7 @@ $(function() {
     let BurnCalorie = BasalMetabolism * weight * LifeIndex
 
     // 表示(小数点切り捨て)
-    $('#burn_result').val('約' + parseInt(BurnCalorie,10));
+    $('#burn_result').val(parseInt(BurnCalorie,10));
 
     $('.calc_main__goal').fadeIn("fast");
   })
@@ -76,7 +76,7 @@ $(function() {
     let IntakeCalorie = BurnCalorie + DayCalorie
     
     // 一日の目標カロリーを表示
-    $('#intake_result').val('約' + parseInt(IntakeCalorie, 10));
+    $('#intake_result').val(parseInt(IntakeCalorie, 10));
 
   })
 
