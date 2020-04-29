@@ -48,6 +48,7 @@ $(function() {
     // 表示(小数点切り捨て)
     $('#burn_result').val('約' + parseInt(BurnCalorie,10));
 
+    $('.calc_main__goal').fadeIn("fast");
   })
 
   // 摂取カロリー
