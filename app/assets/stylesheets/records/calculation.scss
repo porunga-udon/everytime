@@ -26,6 +26,9 @@
       font-size: 18px;
       border-top: solid 1px rgb(180, 179, 179);
     }
+    &__goal {
+      display: none;
+    }
     .group {
       color: $font_color;
       margin: 30px auto 0;
@@ -45,7 +48,7 @@
         margin-bottom: 10px;
       }
       &__form {
-        .woman {
+        #woman {
           margin-left: 50px;
         }
         .calc_form {
