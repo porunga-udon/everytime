@@ -4,8 +4,11 @@ class Food < ApplicationRecord
   validates :one_of_nutrition, presence: true, format: {with: /\A[0-9]+\z/ }, inclusion: 0..999
 
   def self.search(input)
-    return nil if input == ""
-    Food.where(['name LIKE ?', "%#{input}%"] )
+    if input == ""
+      Food.all
+    else
+      Food.where(['name LIKE ?', "%#{input}%"] )
+    end
   end
 
   private
