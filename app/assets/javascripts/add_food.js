@@ -39,19 +39,20 @@ $(function() {
     // 追加ボタンクリック
     $(document).on("click", ".fa-plus-circle", function(e){
       e.preventDefault();
-
-      let serving = Number($('.modal_foods__index__list__num').val());
-      console.log(serving)
       
       let foodId = this.id
+      
+      // 何人前か取得
+      let serving = Number($('#quantity' + foodId).val());
+
       let nutrition = document.getElementById('nutrition' + foodId).children
       let data = {
         class  :'meal' + id,
         name   :document.getElementById('name' + foodId).innerHTML,
-        calorie:Number(nutrition[0].textContent),
-        carbo  :Number(nutrition[1].textContent),
-        fat    :Number(nutrition[2].textContent),
-        protein:Number(nutrition[3].textContent),
+        calorie:Number(nutrition[0].textContent) * serving,
+        carbo  :Number(nutrition[1].textContent) * serving,
+        fat    :Number(nutrition[2].textContent) * serving,
+        protein:Number(nutrition[3].textContent) * serving,
       }
       // 追加先の食事のhtml
       let mealId = '#foods' + id
@@ -85,7 +86,6 @@ $(function() {
       $(carboTotal).text(sumCarbo);
       $(fatTotal).text(sumFat);
       $(proteinTotal).text(sumProtein);
-
 
     })
   })
