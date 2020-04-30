@@ -3,6 +3,11 @@ class FoodsController < ApplicationController
 
   def index
     @foods = Food.all
+    @datas = @foods.search(params[:keyword])
+    respond_to do |format|
+      format.json
+      format.html
+    end
   end
 
   def create
