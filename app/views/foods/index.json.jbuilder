@@ -1,4 +1,5 @@
 json.array! @datas do |data|
+  json.id       data.id
   json.name     data.name
   json.quantity data.quantity
   json.calorie  data.calorie
