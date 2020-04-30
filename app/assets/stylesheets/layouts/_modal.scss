@@ -71,8 +71,18 @@
       border-top: solid 1px $main_back;
       font-size: 12px;
       &__name {
+        width: 129px;
+      }
+      &__num {
+        width: 20px;
+        text-align: center;
+      }
+      &__serving {
+        width: 40px;
+      }
+      &__quantity {
+        width: 140px;
         border-right: solid thin $main_back;
-        width: 329px;
       }
       &__data {
         display: flex;
@@ -153,4 +163,9 @@
       font-size: 15px;
     }
   }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
