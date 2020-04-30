@@ -16,7 +16,8 @@
       %li.modal_foods__index__list
         .modal_foods__index__list__name{id:"name#{food.id}"}
           = food.name
-        %input.modal_foods__index__list__num{type:"number", value:1}
+        .modal_foods__index__list__num
+          = select_tag 'quantity', options_for_select([*1..9]), class:"quantity_select", id:"quantity#{food.id}"
         .modal_foods__index__list__serving
           人前：
         .modal_foods__index__list__quantity
