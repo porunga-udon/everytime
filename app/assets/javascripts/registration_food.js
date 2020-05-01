@@ -7,6 +7,24 @@ $(function() {
                       <div class="modal_foods__index__list__name", id="name${newFood.id}">
                         ${newFood.name}
                       </div>
+                      <div class="modal_foods__index__list__num">
+                        <select name="quantity" id="serving${newFood.id}" class="quantity_select"><option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                        </select>
+                      </div>
+                      <div class="modal_foods__index__list__serving">
+                        人前：
+                      </div>
+                      <div class="modal_foods__index__list__quantity" id="quantity${newFood.id}">
+                        ${newFood.quantity}
+                      </div>
                       <ul class="modal_foods__index__list__data" id="nutrition${newFood.id}">
                         <li class="modal_foods__index__list__data--num">
                           ${newFood.calorie}
