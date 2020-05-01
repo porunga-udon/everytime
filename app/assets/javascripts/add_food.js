@@ -55,8 +55,8 @@ $(function() {
       let num = quantity.replace(/[^0-9]/g, '');
 
       // 数値の部分を削除して単位を取得
-      let unit = quantity.slice(num.length + 1)
-      
+      let unit = quantity.replace(num, '');
+
       // htmlに渡すデータを作成
       let nutrition = document.getElementById('nutrition' + foodId).children
       let data = {
