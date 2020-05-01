@@ -56,17 +56,17 @@ $(function() {
 
       // 数値の部分を削除して単位を取得
       let unit = quantity.slice(num.length + 1)
-
+      
       // htmlに渡すデータを作成
       let nutrition = document.getElementById('nutrition' + foodId).children
       let data = {
-        class  :'meal' + id,
-        name   :document.getElementById('name' + foodId).innerHTML,
+        class    :'meal' + id,
+        name     :document.getElementById('name' + foodId).innerHTML,
         quantity : (serving * num) + unit,
-        calorie:Number(nutrition[0].textContent) * serving,
-        carbo  :Number(nutrition[1].textContent) * serving,
-        fat    :Number(nutrition[2].textContent) * serving,
-        protein:Number(nutrition[3].textContent) * serving,
+        calorie  :Number(nutrition[0].textContent) * serving,
+        carbo    :Number(nutrition[1].textContent) * serving,
+        fat      :Number(nutrition[2].textContent) * serving,
+        protein  :Number(nutrition[3].textContent) * serving,
       }
 
       // 追加先の食事のhtmlを指定
