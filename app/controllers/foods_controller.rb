@@ -12,12 +12,13 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
+    @food.column_check
     if @food.save
       respond_to do |format|
         format.json
       end
     else
-      redirect_to foods_path
+      redirect_to root_path #後で直す
     end
   end
 
