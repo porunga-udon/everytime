@@ -13,10 +13,13 @@ class Food < ApplicationRecord
   end
 
   def column_check
-    self.calorie = 0 if self.calorie.blank?
-    self.carbo   = 0 if self.carbo.blank?
-    self.fat     = 0 if self.fat.blank?
-    self.protein = 0 if self.protein.blank?
+    # 全角の数値とアルファベットを半角に変換
+    self.quantity = quantity.tr('０-９ａ-ｚＡ-Ｚ', '0-9a-zA-Z')
+    # カラムが空の場合0を入れる
+    self.calorie  = 0 if calorie.blank?
+    self.carbo    = 0 if carbo.blank?
+    self.fat      = 0 if fat.blank?
+    self.protein  = 0 if protein.blank?
   end
 
   private
