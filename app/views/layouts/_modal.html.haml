@@ -16,6 +16,12 @@
       %li.modal_foods__index__list
         .modal_foods__index__list__name{id:"name#{food.id}"}
           = food.name
+        .modal_foods__index__list__num
+          = select_tag 'quantity', options_for_select([*1..9]), class:"quantity_select", id:"serving#{food.id}"
+        .modal_foods__index__list__serving
+          人前：
+        .modal_foods__index__list__quantity{id:"quantity#{food.id}"}
+          = food.quantity
         %ul.modal_foods__index__list__data{id:"nutrition#{food.id}"}
           %li.modal_foods__index__list__data--num
             = food.calorie
@@ -56,10 +62,10 @@
       = f.text_field :name, class:"modal_new__main__form"
       .modal_new__main__text
         1人前の分量
-      = f.text_field :quantity, class:"modal_new__main__form"
+      = f.text_field :quantity, class:"modal_new__main__form", placeholder:"例)100g,1個"
       - @nutrition.each do |nutrition|
         .modal_new__main__text
           = nutrition[:ja]
-        = f.text_field nutrition[:column], class:"modal_new__main__form",value:0
+        = f.number_field nutrition[:column], class:"modal_new__main__form--num", value:0
       .modal_new__add
         = f.submit "追加する", class:"modal_new__add__bottun"
