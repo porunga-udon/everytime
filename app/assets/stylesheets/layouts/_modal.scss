@@ -156,6 +156,10 @@
     }
     &__form {
       width: 150px;
+      &--num {
+        text-align: right;
+        width: 150px;
+      }
     }
   }
   &__add {
