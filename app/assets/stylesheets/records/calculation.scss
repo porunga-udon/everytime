@@ -25,6 +25,11 @@
       font-weight: bold;
       font-size: 18px;
       border-top: solid 1px rgb(180, 179, 179);
+      margin-left: 10px;
+      .calculate_help {
+        cursor: pointer;
+        font-size: 15px;
+      }
     }
     &__goal {
       display: none;
@@ -46,6 +51,10 @@
       &__text {
         font-weight: bold;
         margin-bottom: 10px;
+        .calculate_help {
+          cursor: pointer;
+          font-size: 13px;
+        }
       }
       &__form {
         #woman {

@@ -2,11 +2,12 @@
 
   .calc_main
     .calc_main__top
-      目標達成
+      カロリー計算
     
     -# 消費カロリー計算-------------------------------
     .calc_main__title
       消費カロリー計算
+      = icon "far", "question-circle", class:"calculate_help", id:"burn_help"
     .calc_main__content
       .group
         .group__text
@@ -29,6 +30,7 @@
       .group
         .group__text
           生活指数
+          = icon "far", "question-circle", class:"calculate_help", id:"life_index_help"
         .group__form
           = select_tag 'age', options_for_select(["--",*1.3,1.5,1.7,1.9]), class:"calc_select", id:"life_index_select"
       .group
@@ -43,6 +45,7 @@
       .calc_main__goal
         .calc_main__title
           摂取カロリー計算
+          = icon "far", "question-circle", class:"calculate_help", id:"intake_help"
         .group
           .group__text
             目標体重
