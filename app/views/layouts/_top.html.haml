@@ -2,7 +2,7 @@
   = link_to root_path, class:"link" do
     = icon 'fas', 'home', class:'home'
   - if user_signed_in?
-    = link_to  "#", class:"link" do
+    = link_to  user_path(current_user.id), class:"link" do
       =current_user.nickname
     = link_to destroy_user_session_path, method: :delete, class:"link" do
       ログアウト
