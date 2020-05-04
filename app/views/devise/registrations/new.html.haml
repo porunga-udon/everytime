@@ -1,0 +1,30 @@
+.devise_wrapper
+  .devise_main
+    .devise_main__top
+      新規登録
+    = render "devise/shared/error_messages", resource: resource
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .group
+        .group__text
+          ニックネーム
+        .group__form
+          = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class:"user_form"
+      .group
+        .group__text
+          メールアドレス
+        .group__form
+          = f.email_field :email, autofocus: true, autocomplete: "email", class:"user_form"
+      .group
+        .group__text
+          パスワード
+          - if @minimum_password_length
+            (#{@minimum_password_length}文字以上)
+        .group__form
+          = f.password_field :password, autocomplete: "new-password", class:"user_form"
+      .group
+        .group__text
+          パスワード(確認用)
+        .group__form
+          = f.password_field :password_confirmation, autocomplete: "new-password", class:"user_form"
+      .group
+        = f.submit "登録する", class:"registration-btn"

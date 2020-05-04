@@ -1,0 +1,22 @@
+.mypage_wrapper
+  .mypage_main
+    .mypage_main__top
+      = current_user.nickname
+      さんのマイページ
+    .mypage_main__content
+      .mypage_main__content__title
+        ユーザー情報
+      .mypage_main__content__info
+        ニックネーム:
+        = current_user.nickname
+      .mypage_main__content__info
+        メールアドレス:
+        = current_user.email
+      .mypage_main__content__edit
+        = link_to edit_user_registration_path(current_user.id) do
+          %button.edit-btn 編集する
+    .mypage_main__content__title
+      登録データ
+    -# .mypage_main__content
+    -#   .mypage_main__content__title
+    -#     目標

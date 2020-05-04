@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.mypage_wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(216, 214, 214);
+  padding: 50px 0;
+  .mypage_main {
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    background-color: $main_back;
+    padding-bottom: 50px;
+    &__top {
+      color: $font_color;
+      height: 90px;
+      line-height: 90px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 25px;
+    }
+    &__content {
+      height: 100%;
+      margin-bottom: 30px;
+      &__title {
+        color: $font_color;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        border-top: solid 1px rgb(180, 179, 179);
+        margin-bottom: 30px;
+      }
+      &__info {
+        color: $font_color;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 13px;
+      }
+      &__edit {
+        width: 200px;
+        margin: 0 auto;
+      }
+      .edit-btn {
+        width: 200px;
+        background-color: whitesmoke;
+        margin: 40px auto 0;
+      }
+    }
+  }
+}

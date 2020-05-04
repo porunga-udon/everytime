@@ -1,7 +1,13 @@
 .header__top
   = link_to root_path, class:"link" do
     = icon 'fas', 'home', class:'home'
-  = link_to "#", class:"link" do
-    新規登録
-  = link_to "#", class:"link" do
-    ログイン
+  - if user_signed_in?
+    = link_to  user_path(current_user.id), class:"link" do
+      =current_user.nickname
+    = link_to destroy_user_session_path, method: :delete, class:"link" do
+      ログアウト
+  -else
+    = link_to  new_user_registration_path, class:"link" do
+      新規登録
+    = link_to new_user_session_path, class:"link" do
+      ログイン

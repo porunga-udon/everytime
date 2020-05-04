@@ -1,0 +1,21 @@
+.devise_wrapper
+  .devise_main
+    .devise_main__top
+      ログイン
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .group
+        .group__text
+          メールアドレス
+        .group__form
+          = f.email_field :email, autofocus: true, autocomplete: "email", class:"user_form"
+      .group
+        .group__text
+          パスワード
+        .group__form
+          = f.password_field :password, autocomplete: "current-password", class:"user_form"
+        - if devise_mapping.rememberable?
+          .group
+            = f.check_box :remember_me
+            = f.label :"ログイン状態を保持"
+      .group
+        = f.submit "ログイン", class:"registration-btn"
