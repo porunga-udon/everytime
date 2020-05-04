@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_065333) do
+ActiveRecord::Schema.define(version: 2020_05_04_084440) do
 
-  create_table "data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "name"
+    t.integer "calorie"
+    t.integer "carbo"
+    t.integer "fat"
+    t.integer "protein"
+    t.text "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "gender", null: false
     t.date "birthday", null: false
     t.decimal "weight", precision: 4, scale: 1, null: false
@@ -24,18 +35,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_065333) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_data_on_user_id"
-  end
-
-  create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "name"
-    t.integer "calorie"
-    t.integer "carbo"
-    t.integer "fat"
-    t.integer "protein"
-    t.text "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_data_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -51,5 +51,5 @@ ActiveRecord::Schema.define(version: 2020_05_04_065333) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "data", "users"
+  add_foreign_key "user_data", "users"
 end
