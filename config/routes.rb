@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "users#index"
   resources :users, only: [:index, :show]
 
-  resources :datas, only: [:new,:create]
+  resources :user_datas, only: [:new, :create]
 
   resources :foods, only: [:index,:create]
   
