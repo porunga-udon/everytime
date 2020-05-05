@@ -1,13 +1,28 @@
 .header__top
-  = link_to root_path, class:"link" do
+  = link_to root_path, class:"home_link" do
     = icon 'fas', 'home', class:'home'
   - if user_signed_in?
-    = link_to  user_path(current_user.id), class:"link" do
+    -# PC用
+    = link_to  user_path(current_user.id), class:"text_link" do
       =current_user.nickname
-    = link_to destroy_user_session_path, method: :delete, class:"link" do
+    = link_to destroy_user_session_path, method: :delete, class:"text_link" do
       ログアウト
+
+    -# スマホ用アイコン
+    = link_to  user_path(current_user.id), class:"icon_link" do
+      = icon 'fas', 'user', class:'icon'
+    = link_to destroy_user_session_path, method: :delete, class:"icon_link" do
+      = icon 'fas', 'sign-out-alt', class:'icon'
+
   -else
-    = link_to  new_user_registration_path, class:"link" do
+    -# PC用
+    = link_to  new_user_registration_path, class:"text_link" do
       新規登録
-    = link_to new_user_session_path, class:"link" do
+    = link_to new_user_session_path, class:"text_link" do
       ログイン
+
+    -# スマホ用
+    = link_to  new_user_registration_path, class:"icon_link" do
+      = icon 'fas', 'user-plus', class:'icon'
+    = link_to new_user_session_path, class:"icon_link" do
+      = icon 'fas', 'sign-in-alt', class:'icon'
