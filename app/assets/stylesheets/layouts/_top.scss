@@ -31,13 +31,13 @@
 @media screen and (max-width: 766px) { /*ウィンドウ幅が最大766pxまでの場合に適用*/
   .header {
     &__top {
-      height: 30px;
+      height: 21px;
       background-color: $top_color;
       text-align: right;
       .home_link {
-        line-height: 30px;
+        line-height: 20px;
         color: white;
-        font-size: 17px;
+        font-size: 15px;
         text-decoration: none;
         margin-right: 12px;
       }
@@ -45,8 +45,8 @@
         display: none;
       }
       .icon_link {
-        line-height: 30px;
-        font-size: 17px;
+        line-height: 20px;
+        font-size: 15px;
         color: white;
         text-decoration: none;
         margin-right: 12px;
