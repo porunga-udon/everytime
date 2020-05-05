@@ -144,7 +144,6 @@
   }  
 }
 
-
 // スマホ用
 @media screen and (max-width: 766px) { /*ウィンドウ幅が最大766pxまでの場合に適用*/
   .foods_wrapper {
@@ -152,55 +151,54 @@
     width: 100%;
     background-color: $sub_back;
     padding: 50px 0;
-  
     .foods_main {
-      height: calc(100%-0px);
-      width: 50%;
+      height: 100%;
+      width: 350px;
       margin: 0 auto;
       background-color: $main_back;
       padding-bottom: 50px;
       &__top {
         color: $font_color;
-        height: 90px;
-        line-height: 90px;
+        height: 60px;
+        line-height: 60px;
         text-align: center;
         font-weight: bold;
-        font-size: 25px;
+        font-size: 20px;
         border-bottom: solid 1px rgb(180, 179, 179);
-        margin-bottom: 40px;
+        margin-bottom: 20px;
       }
       &__nutrition {
-        width: 320px;
+        width:63%;
         margin: 0 0 0 auto;
         display: flex;
         &__block {
-          height: 70px;
-          width: 60px;
+          height: 55px;
+          width: 45px;
           background-color:$main_color;
           border-right: solid thin $main_back;
           text-align: center;
           .ja {
             padding: 5px 5px 0;
-            font-size: 14px;
+            font-size: 10px;
             color: white;
           }
           .eng {
             color: rgb(189, 187, 187);
-            font-size: 13px;
+            font-size: 9px;
           }
         }
       }
       &__meal {
-        margin-left: 50px;
-        font-size: 19px;
+        margin-left: 18px;
+        font-size: 15px;
         color: $main_color;
       }
       &__food {
-        width: 604px;
+        width: 93.5%;
         height: 100%;
         line-height: 30px;
-        padding-left: 20px;
-        margin-left: 50px;
+        padding-left: 10px;
+        margin-left: 12px;
         display: flex;
         background-color: $food_back;
         border-top: solid 1px $main_back;
@@ -208,23 +206,23 @@
       }
       &__name {
         border-right: solid thin $main_back;
-        width: 329px;
+        width: 35%;
       }
       &__index {
         display: flex;
         &--num {
-          width: 60px;
+          width: 45px;
           text-align: center;
           border-right: solid thin $main_back;
         }
       }
       &__total {
-        width: 574px;
+        width: 93.5%;
         height: 30px;
         line-height: 35px;
         padding-left: 20px;
         padding-right: 30px;
-        margin-left: 50px;
+        margin-left: 12px;
         margin-bottom: 30px;
         display: flex;
         border-top: solid 1px $sub_color;
@@ -232,17 +230,18 @@
         font-size: 13px;
         font-weight: bold;
         &__add {
-          width: 329px;
+          width: 35%;
           .add {
             text-decoration: none;
             color: $top_color;
             font-weight: bold;
+            font-size: 12px;
           }
         }
         &__data {
           display: flex;
           &--num {
-            width: 60px;
+            width: 45px;
             text-align: center;
             border-right: solid thin $main_back;
             color: $top_color;
@@ -262,25 +261,25 @@
         }
       }
       &__all {
-        width: 574px;
+        width: 93.5%;
         height: 30px;
         line-height: 35px;
-        padding-left: 20px;
-        margin-top: 20px;
-        margin-left: 66px;
+        padding-left: 10px;
+        margin: 20px auto 0;
         display: flex;
         font-size: 13px;
         font-weight: bold;
         &__text {
-          width: 50px;
-          margin-left: 270px;
+          width: 34%;
+          text-align: right;
+          padding-right: 15px;
           font-size:15px;
         }
         &__data {
           background-color: $food_back;
           display: flex;
           &--num {
-            width: 60px;
+            width: 45px;
             text-align: center;
             border-right: solid thin $main_back;
             border-bottom: solid thin $main_back;
