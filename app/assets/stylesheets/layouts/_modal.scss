@@ -129,9 +129,9 @@
 .modal_new {
   color: black;
   background-color: $main_back;
-  height: 550px;
+  height: 590px;
   width: 25%;
-  margin: 120px 0 0 550px;
+  margin: 100px 0 0 550px;
   position:fixed;
   z-index: 3;
   top:0;
@@ -164,7 +164,19 @@
   }
   &__add {
     width: 160px;
-    margin: 40px auto;
+    margin: 30px auto 20px;
+    &__bottun {
+      width: 150px;
+      height: 30px;
+      background-color: $main_color;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+  &__close {
+    width: 160px;
+    margin: 0 auto;
     &__bottun {
       width: 150px;
       height: 30px;

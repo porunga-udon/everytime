@@ -54,7 +54,7 @@
 
 .modal_new
   .modal_new__top
-    新しくフードを追加
+    新しいフードを追加する
   .modal_new__main
     = form_with(model: @food, local: true, id:"new_food_registration") do |f|
       .modal_new__main__text
@@ -69,3 +69,5 @@
         = f.number_field nutrition[:column], class:"modal_new__main__form--num", value:0
       .modal_new__add
         = f.submit "追加する", class:"modal_new__add__bottun"
+      .modal_new__close
+        %button.modal_new__close__bottun 閉じる
