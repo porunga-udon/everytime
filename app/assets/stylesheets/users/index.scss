@@ -22,7 +22,8 @@
           }
           &--center {
             margin-top: 10px;
-            font-size: 20px;
+            margin-left: 10px;
+            font-size: 18px;
           }
         }
         &__right {
@@ -106,18 +107,19 @@
         background-color: $main_color;
         display: flex;
         &__left {
-          padding-top: 30px;
-          padding-bottom: 30px;
-          margin-left: 18%;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          margin: 0 auto;
           height: 100%;
-          width: 40%;
+          width: 165px;
           &--top {
-            font-size: 40px;
+            font-size: 30px;
             font-weight: bold;
           }
           &--center {
             margin-top: 10px;
-            font-size: 20px;
+            margin-left: 10px;
+            font-size: 13px;
           }
         }
         &__right {
