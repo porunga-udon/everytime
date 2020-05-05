@@ -1,4 +1,100 @@
+// PC用
 @media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+  .wrapper {
+    height: 100%;
+    width: 100%;
+  
+    .header {
+      color: white;
+      &__main {
+        height: 100%;
+        background-color: $main_color;
+        display: flex;
+        &__left {
+          padding-top: 30px;
+          padding-bottom: 30px;
+          margin-left: 18%;
+          height: 100%;
+          width: 40%;
+          &--top {
+            font-size: 40px;
+            font-weight: bold;
+          }
+          &--center {
+            margin-top: 10px;
+            font-size: 20px;
+          }
+        }
+        &__right {
+          display: flex;
+          padding-top: 200px;
+          padding-left: 40px;
+        }
+      }
+    }
+  
+    .main {
+      height: 100%;
+      background-color: $sub_color;
+      padding-bottom: 200px;
+      &__top {
+        color: $font_color;
+        height: 100px;
+        width: 127px;
+        margin: 0 auto;
+        // padding-left: 25%;
+        line-height: 170px;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      &__center {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        margin-top: 100px;
+        &__content {
+          width: 200px;
+          &--image {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: white;
+            position: relative;
+            .icon {
+              position: absolute;
+              top: 30px;
+              left: 30px;
+            }
+          }
+          &--name {
+            color: $font_color;
+            margin-top: 40px;
+            font-weight: bold;
+          }
+          &--text {
+            margin-top: 20px;
+            color: $font_color;
+          }
+          &--btn {
+            margin-top: 40px;
+            
+            .btn {
+              width: 200px;
+              height: 40px;
+              font-size: 15px;
+              line-height: 38px;
+              cursor: pointer;
+              color: $font_color;
+            }
+          }
+        }
+      }
+    } 
+  }
+}
+
+// スマホ用
+@media screen and (max-width: 766px) { /*ウィンドウ幅が最大766pxまでの場合に適用*/
   .wrapper {
     height: 100%;
     width: 100%;
