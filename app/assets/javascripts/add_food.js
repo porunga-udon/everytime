@@ -119,16 +119,16 @@ $(function() {
   function modalResize(){
     
     // ディスプレイ
-    var width = $(window).width();
-    var height = $(window).height();
+    let width = $(window).width();
+    let height = $(window).height();
 
     // フード追加モーダル
-    var foodWeight = $(".modal_foods").outerWidth();
-    var foodHeight = $(".modal_foods").outerHeight();
+    let foodWeight = $(".modal_foods").outerWidth();
+    let foodHeight = $(".modal_foods").outerHeight();
 
     // フード新規登録モーダル
-    var newWeight = $(".modal_new").outerWidth();
-    var newHeight = $(".modal_new").outerHeight();
+    let newWeight = $(".modal_new").outerWidth();
+    let newHeight = $(".modal_new").outerHeight();
 
     //取得した値をcssに追加する
     $(".modal_foods").css({
