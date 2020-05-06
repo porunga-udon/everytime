@@ -19,8 +19,6 @@
     width: 700px;
     margin: 0;
     padding: 0;
-    top:0;
-    left:0;
     position:fixed;
     z-index: 2;
     display:none;
@@ -136,8 +134,6 @@
     width: 500px;
     position:fixed;
     z-index: 3;
-    top:0;
-    left:0;
     display:none;
     &__top {
       height: 50px;
@@ -207,8 +203,6 @@
     width: 350px;
     margin: 0;
     padding: 0;
-    top:0;
-    left:0;
     position:fixed;
     z-index: 2;
     display:none;
@@ -325,8 +319,6 @@
     width: 350px;
     position:fixed;
     z-index: 3;
-    top:0;
-    left:0;
     display:none;
     &__top {
       height: 50px;
