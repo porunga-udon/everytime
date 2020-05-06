@@ -2,56 +2,116 @@
   box-sizing: border-box;
 }
 
-
-.mypage_wrapper {
-  height: 100%;
-  width: 100%;
-  background-color: rgb(216, 214, 214);
-  padding: 50px 0;
-  .mypage_main {
+// PC用
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+  .mypage_wrapper {
     height: 100%;
-    width: 50%;
-    margin: 0 auto;
-    background-color: $main_back;
-    padding-bottom: 50px;
-    &__top {
-      color: $font_color;
-      height: 90px;
-      line-height: 90px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 25px;
-    }
-    &__content {
+    width: 100%;
+    background-color: $sub_back;
+    padding: 50px 0;
+    .mypage_main {
       height: 100%;
-      margin-bottom: 30px;
-      &__title {
+      width: 700px;
+      margin: 0 auto;
+      background-color: $main_back;
+      padding-bottom: 50px;
+      &__top {
         color: $font_color;
-        height: 70px;
-        line-height: 70px;
+        height: 90px;
+        line-height: 90px;
         text-align: center;
         font-weight: bold;
-        font-size: 18px;
-        border-top: solid 1px rgb(180, 179, 179);
+        font-size: 25px;
+      }
+      &__content {
+        height: 100%;
         margin-bottom: 30px;
-      }
-      &__info {
-        color: $font_color;
-        height: 20px;
-        line-height: 20px;
-        text-align: center;
-        font-weight: bold;
-        font-size: 13px;
-      }
-      &__edit {
-        width: 200px;
-        margin: 0 auto;
-      }
-      .edit-btn {
-        width: 200px;
-        background-color: whitesmoke;
-        margin: 40px auto 0;
+        &__title {
+          color: $font_color;
+          height: 70px;
+          line-height: 70px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 18px;
+          border-top: solid 1px rgb(180, 179, 179);
+          margin-bottom: 30px;
+        }
+        &__info {
+          color: $font_color;
+          height: 20px;
+          line-height: 20px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 13px;
+        }
+        &__edit {
+          width: 200px;
+          margin: 0 auto;
+        }
+        .edit-btn {
+          width: 200px;
+          background-color: whitesmoke;
+          margin: 40px auto 0;
+        }
       }
     }
   }
+  
+}
+
+// スマホ用
+@media screen and (max-width: 766px) { /*ウィンドウ幅が最大766pxまでの場合に適用*/
+  .mypage_wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: $sub_back;
+    padding: 50px 0;
+    .mypage_main {
+      height: 100%;
+      width: 350px;
+      margin: 0 auto;
+      background-color: $main_back;
+      padding-bottom: 50px;
+      &__top {
+        color: $font_color;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      &__content {
+        height: 100%;
+        margin-bottom: 30px;
+        &__title {
+          color: $font_color;
+          height: 70px;
+          line-height: 70px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 18px;
+          border-top: solid 1px rgb(180, 179, 179);
+          margin-bottom: 30px;
+        }
+        &__info {
+          color: $font_color;
+          height: 20px;
+          line-height: 20px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 13px;
+        }
+        &__edit {
+          width: 200px;
+          margin: 0 auto;
+        }
+        .edit-btn {
+          width: 200px;
+          background-color: whitesmoke;
+          margin: 40px auto 0;
+        }
+      }
+    }
+  }
+  
 }

@@ -1,15 +1,36 @@
-.footer {
-  height: 100px;
-  background-color: $main_color;
-  &__title {
-    width: 100px;
-    margin: 0 auto;
-    padding-top: 30px;
-    font-size: 20px;
-    font-weight: bold;
-    .link {
-      text-decoration: none;
-      color: white;
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+  .footer {
+    height: 100px;
+    background-color: $main_color;
+    &__title {
+      width: 100px;
+      margin: 0 auto;
+      padding-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      .link {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 766px) { /*ウィンドウ幅が最大766pxまでの場合に適用*/
+  .footer {
+    height: 40px;
+    background-color: $main_color;
+    line-height: 40px;
+    &__title {
+      width: 82px;
+      margin: 0 auto;
+      font-size: 15px;
+      font-weight: bold;
+      .link {
+        text-decoration: none;
+        color: white;
+      }
     }
   }
 }

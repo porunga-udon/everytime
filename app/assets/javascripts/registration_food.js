@@ -82,4 +82,12 @@ $(function() {
     })
   })
 
+  // 閉じるボタンクリック
+  $('.modal_new__close__bottun').click(function(e) {
+    e.preventDefault();
+    $('.modal_new').fadeOut("fast");
+    $('form')[0].reset();
+    $('#new_food_registration').off();
+  })
+
 });

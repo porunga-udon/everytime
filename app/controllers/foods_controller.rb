@@ -31,6 +31,8 @@ class FoodsController < ApplicationController
     @meals = [{name:"朝食", id:"1"}, {name:"昼食", id:"2"}, {name:"夕食", id:"3"}, {name:"間食", id:"4"}]
 
     @nutrition = [{ja:"カロリー", eng:"kcal", column:"calorie"},{ja:"炭水化物", eng:"g", column:"carbo"},{ja:"脂肪", eng:"g", column:"fat"},{ja:"タンパク質", eng:"g", column:"protein"}]
+
+    @tests = [{id:1, name:"test", calorie:200, carbo:120, fat:20, protein:18}, {id:2, name:"test2", calorie:220, carbo:220, fat:40, protein:18}, {id:3, name:"test3", calorie:300, carbo:320, fat:30, protein:18}, {id:4, name:"test4", calorie:400, carbo:120, fat:20, protein:18}]
   end
 
 end

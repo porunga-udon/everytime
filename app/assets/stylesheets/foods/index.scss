@@ -1,143 +1,292 @@
-.foods_wrapper {
-  height: 100%;
-  width: 100%;
-  background-color: rgb(216, 214, 214);
-  padding: 50px 0;
-
-  .foods_main {
-    height: calc(100%-0px);
-    width: 50%;
-    margin: 0 auto;
-    background-color: $main_back;
-    padding-bottom: 50px;
-    &__top {
-      color: $font_color;
-      height: 90px;
-      line-height: 90px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 25px;
-      border-bottom: solid 1px rgb(180, 179, 179);
-      margin-bottom: 40px;
-    }
-    &__nutrition {
-      width: 320px;
-      margin: 0 0 0 auto;
-      display: flex;
-      &__block {
-        height: 70px;
-        width: 60px;
-        background-color:$main_color;
-        border-right: solid thin $main_back;
-        text-align: center;
-        .ja {
-          padding: 5px 5px 0;
-          font-size: 14px;
-          color: white;
-        }
-        .eng {
-          color: rgb(189, 187, 187);
-          font-size: 13px;
-        }
-      }
-    }
-    &__meal {
-      margin-left: 50px;
-      font-size: 19px;
-      color: $main_color;
-    }
-    &__food {
-      width: 604px;
+// PC用
+@media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
+  .foods_wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: $sub_back;
+    padding: 50px 0;
+  
+    .foods_main {
       height: 100%;
-      line-height: 30px;
-      padding-left: 20px;
-      margin-left: 50px;
-      display: flex;
-      background-color: $food_back;
-      border-top: solid 1px $main_back;
-      font-size: 12px;
-    }
-    &__name {
-      border-right: solid thin $main_back;
-      width: 329px;
-    }
-    &__index {
-      display: flex;
-      &--num {
-        width: 60px;
+      width: 700px;
+      margin: 0 auto;
+      background-color: $main_back;
+      padding-bottom: 50px;
+      &__top {
+        color: $font_color;
+        height: 90px;
+        line-height: 90px;
         text-align: center;
-        border-right: solid thin $main_back;
+        font-weight: bold;
+        font-size: 25px;
+        border-bottom: solid 1px rgb(180, 179, 179);
+        margin-bottom: 40px;
       }
-    }
-    &__total {
-      width: 574px;
-      height: 30px;
-      line-height: 35px;
-      padding-left: 20px;
-      padding-right: 30px;
-      margin-left: 50px;
-      margin-bottom: 30px;
-      display: flex;
-      border-top: solid 1px $sub_color;
-      border-bottom: solid 1px $sub_color;
-      font-size: 13px;
-      font-weight: bold;
-      &__add {
-        width: 329px;
-        .add {
-          text-decoration: none;
-          color: $top_color;
-          font-weight: bold;
-        }
-      }
-      &__data {
+      &__nutrition {
+        width: 46.5%;
+        margin: 0 0 0 auto;
         display: flex;
-        &--num {
+        &__block {
+          height: 70px;
           width: 60px;
-          text-align: center;
+          background-color:$main_color;
           border-right: solid thin $main_back;
-          color: $top_color;
-          padding-left: 1px;
+          text-align: center;
+          .ja {
+            padding: 5px 5px 0;
+            font-size: 14px;
+            color: white;
+          }
+          .eng {
+            color: rgb(189, 187, 187);
+            font-size: 13px;
+          }
         }
       }
-    }
-    &__remove {
-      width: 30px;
-      background-color: $food_back;
-      text-align: center;
-      .remove {
-        font-size: 15px;
-        text-decoration: none;
-        color: red;
-        cursor: pointer;
+      &__meal {
+        margin-left: 50px;
+        font-size: 19px;
+        color: $main_color;
       }
-    }
-    &__all {
-      width: 574px;
-      height: 30px;
-      line-height: 35px;
-      padding-left: 20px;
-      margin-top: 20px;
-      margin-left: 66px;
-      display: flex;
-      font-size: 13px;
-      font-weight: bold;
-      &__text {
-        width: 50px;
-        margin-left: 270px;
-        font-size:15px;
-      }
-      &__data {
+      &__food {
+        width: 85%;
+        height: 100%;
+        line-height: 30px;
+        padding-left: 20px;
+        margin-left: 50px;
+        display: flex;
         background-color: $food_back;
+        border-top: solid 1px $main_back;
+        font-size: 12px;
+      }
+      &__name {
+        border-right: solid thin $main_back;
+        width: 55%;
+      }
+      &__index {
         display: flex;
         &--num {
           width: 60px;
           text-align: center;
           border-right: solid thin $main_back;
-          border-bottom: solid thin $main_back;
-          color: $top_color;
+        }
+      }
+      &__total {
+        width: 85%;
+        height: 30px;
+        line-height: 35px;
+        padding-left: 20px;
+        padding-right: 30px;
+        margin-left: 50px;
+        margin-bottom: 30px;
+        display: flex;
+        border-top: solid 1px $sub_color;
+        border-bottom: solid 1px $sub_color;
+        font-size: 13px;
+        font-weight: bold;
+        &__add {
+          width: 329px;
+          .add {
+            text-decoration: none;
+            color: $top_color;
+            font-weight: bold;
+          }
+        }
+        &__data {
+          display: flex;
+          &--num {
+            width: 60px;
+            text-align: center;
+            border-right: solid thin $main_back;
+            color: $top_color;
+            padding-left: 1px;
+          }
+        }
+      }
+      &__remove {
+        width: 30px;
+        background-color: $food_back;
+        text-align: center;
+        .remove {
+          font-size: 15px;
+          text-decoration: none;
+          color: red;
+          cursor: pointer;
+        }
+      }
+      &__all {
+        width: 90%;
+        height: 30px;
+        line-height: 35px;
+        padding-left: 20px;
+        margin: 20px auto 0;
+        display: flex;
+        font-size: 13px;
+        font-weight: bold;
+        &__text {
+          width: 50px;
+          margin-left: 270px;
+          font-size:15px;
+        }
+        &__data {
+          background-color: $food_back;
+          display: flex;
+          &--num {
+            width: 60px;
+            text-align: center;
+            border-right: solid thin $main_back;
+            border-bottom: solid thin $main_back;
+            color: $top_color;
+          }
+        }
+      }
+    }
+  }  
+}
+
+// スマホ用
+@media screen and (max-width: 766px) { /*ウィンドウ幅が最大766pxまでの場合に適用*/
+  .foods_wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: $sub_back;
+    padding: 50px 0;
+    .foods_main {
+      height: 100%;
+      width: 350px;
+      margin: 0 auto;
+      background-color: $main_back;
+      padding-bottom: 50px;
+      &__top {
+        color: $font_color;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        border-bottom: solid 1px rgb(180, 179, 179);
+        margin-bottom: 20px;
+      }
+      &__nutrition {
+        width:63%;
+        margin: 0 0 0 auto;
+        display: flex;
+        &__block {
+          height: 55px;
+          width: 45px;
+          background-color:$main_color;
+          border-right: solid thin $main_back;
+          text-align: center;
+          .ja {
+            padding: 5px 5px 0;
+            font-size: 10px;
+            color: white;
+          }
+          .eng {
+            color: rgb(189, 187, 187);
+            font-size: 9px;
+          }
+        }
+      }
+      &__meal {
+        margin-left: 18px;
+        font-size: 15px;
+        color: $main_color;
+      }
+      &__food {
+        width: 93.5%;
+        height: 100%;
+        line-height: 30px;
+        padding-left: 10px;
+        margin-left: 12px;
+        display: flex;
+        background-color: $food_back;
+        border-top: solid 1px $main_back;
+        font-size: 12px;
+      }
+      &__name {
+        border-right: solid thin $main_back;
+        width: 35%;
+      }
+      &__index {
+        display: flex;
+        &--num {
+          width: 45px;
+          text-align: center;
+          border-right: solid thin $main_back;
+        }
+      }
+      &__total {
+        width: 93.5%;
+        height: 30px;
+        line-height: 35px;
+        padding-left: 20px;
+        padding-right: 30px;
+        margin-left: 12px;
+        margin-bottom: 30px;
+        display: flex;
+        border-top: solid 1px $sub_color;
+        border-bottom: solid 1px $sub_color;
+        font-size: 13px;
+        font-weight: bold;
+        &__add {
+          width: 35%;
+          .add {
+            text-decoration: none;
+            color: $top_color;
+            font-weight: bold;
+            font-size: 12px;
+          }
+        }
+        &__data {
+          display: flex;
+          &--num {
+            width: 45px;
+            text-align: center;
+            border-right: solid thin $main_back;
+            color: $top_color;
+            padding-left: 1px;
+          }
+        }
+      }
+      &__remove {
+        width: 30px;
+        background-color: $food_back;
+        text-align: center;
+        .remove {
+          font-size: 15px;
+          text-decoration: none;
+          color: red;
+          cursor: pointer;
+        }
+      }
+      &__all {
+        width: 93.5%;
+        height: 30px;
+        line-height: 35px;
+        padding-left: 10px;
+        margin: 20px auto 0;
+        display: flex;
+        font-size: 13px;
+        font-weight: bold;
+        &__text {
+          width: 34%;
+          text-align: right;
+          padding-right: 15px;
+          font-size:15px;
+        }
+        &__data {
+          background-color: $food_back;
+          display: flex;
+          &--num {
+            width: 45px;
+            text-align: center;
+            border-right: solid thin $main_back;
+            border-bottom: solid thin $main_back;
+            color: $top_color;
+          }
         }
       }
     }
   }
-}  
+}
