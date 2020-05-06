@@ -33,6 +33,10 @@ $(function() {
   // フード追加モーダル
   $('.add').click(function(e) {
     e.preventDefault();
+
+    //画面中央を計算する関数を実行
+    modalResize();
+
     let id = this.id
     $('.modal-overlay').fadeIn("fast");
     $('.modal_foods').fadeIn("fast");
@@ -109,7 +113,34 @@ $(function() {
 
     })
   })
-  
+
+  //モーダルの位置を中央に調整
+  $(window).resize(modalResize);
+  function modalResize(){
+    
+    // ディスプレイ
+    var width = $(window).width();
+    var height = $(window).height();
+
+    // フード追加モーダル
+    var foodWeight = $(".modal_foods").outerWidth();
+    var foodHeight = $(".modal_foods").outerHeight();
+
+    // フード新規登録モーダル
+    var newWeight = $(".modal_new").outerWidth();
+    var newHeight = $(".modal_new").outerHeight();
+
+    //取得した値をcssに追加する
+    $(".modal_foods").css({
+      "left": ((width- foodWeight)/2) + "px",
+      "top": ((height - foodHeight)/2) + "px"
+    });
+    $(".modal_new").css({
+      "left": ((width- newWeight)/2) + "px",
+      "top": ((height - newHeight)/2) + "px"
+    });
+  }
+
   // モーダルを閉じる
   $('.modal-overlay').click(function() {
     $('.modal-overlay').fadeOut("fast");
