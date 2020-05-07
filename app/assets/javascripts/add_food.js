@@ -142,12 +142,15 @@ $(function() {
   }
 
   // モーダルを閉じる
-  $('.modal-overlay').click(function() {
-    $('.modal-overlay').fadeOut("fast");
-    $('.modal_foods').fadeOut("fast");
-    $('.modal_new').fadeOut("fast");
-    $('form')[0].reset();
-    $('#new_food_registration').off();
-  })
+  
+  if(document.URL.match(/foods/)){
+    $('.modal-overlay').click(function() {
+      $('.modal-overlay').fadeOut("fast");
+      $('.modal_foods').fadeOut("fast");
+      $('.modal_new').fadeOut("fast");
+      $('form')[0].reset();
+      $('#new_food_registration').off();
+    })
+  }
   
 });
