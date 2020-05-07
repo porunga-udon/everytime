@@ -1,0 +1,105 @@
+-# モーダル
+.modal-overlay
+
+-# 消費カロリーヘルプ
+.modal_help{id:"burn_help_modal"}
+  .modal_help__top
+    消費カロリー計算とは
+  .modal_help__main
+    .box
+      .box__top
+        ○
+      .box__text
+        消費カロリーとは、基礎代謝や運動によって消費されるカロリーのことを指します。
+    .box
+      .box__top
+        ○
+      .box__text
+        基礎代謝とは生命維持に必要な最低限のエネルギーのことで、何も運動をしないでも消費されるエネルギーのことを言います。
+    .box
+      .box__top
+        ○
+      .box__text
+        A「基礎代謝基準値」× B「生活活動指数」× C「体重」で消費カロリーを算出します。
+    %p --------------------------------------------------------------------
+    .box
+      .box__top
+        A
+      .box__text
+        「基礎代謝基準値」…年齢と性別によって定められています。
+    .box
+      .box__top
+        B
+      .box__text
+        「生活活動指数」  …生活の中でどれくらい活動しているかを表す数値です。
+    .box
+      .box__top
+        C
+      .box__text
+        「体重」          …あなたの現在の体重です。
+  .modal_help__close
+    %button.modal_help__close__bottun 閉じる
+
+-# 生活指数ヘルプ
+.modal_help{id:"life_index_help_modal"}
+  .modal_help__top
+    生活活動指数とは
+  .modal_help__main
+    .box
+      .box__top
+        ○
+      .box__text
+        生活活動指数とは、日常生活において、どのくらいの負荷がかかっているかを意味しており、大きく４つに分類されます。
+    %p --------------------------------------------------------------------
+    .box
+      .box__top
+        1.3…
+      .box__text
+        生活のほとんどを座って過ごす。家事などによる立ち仕事もあまりなく、静的な日常。
+    .box
+      .box__top
+        1.5…
+      .box__text
+        座り仕事中心の生活であるが、移動や立位での作業、その他通勤や家事をしている。
+    .box
+      .box__top
+        1.7…
+      .box__text
+        軽度の肉体労働や、1日1時間以上のウォーキングやサイクリングをしている。
+    .box
+      .box__top
+        1.9…
+      .box__text
+        重度の肉体労働や、1日1時間以上の激しいトレーニングをしている。
+
+  .modal_help__close
+    %button.modal_help__close__bottun 閉じる
+
+-# 摂取カロリーヘルプ
+.modal_help{id:"intake_help_modal"}
+  .modal_help__top
+    摂取カロリー計算とは
+  .modal_help__main
+    .box
+      .box__top
+        ○
+      .box__text
+        目標体重と達成までの期間を入力することで、1日の目標摂取カロリーを算出することができます。
+    .box
+      .box__top
+        ○
+      .box__text
+        体重を1kg増量するのに約7200kcal必要と言われています。つまり目標達成に必要なカロリー(総カロリー)は「(目標体重-現在の体重)×7200kcal」で算出できます。
+    .box
+      .box__top
+        ○
+      .box__text
+        「総カロリー÷期間(日)」で「一日の増加カロリー」がわかります。あとは先に算出した「一日の消費カロリー」と「一日の増加カロリー」を合計することで「一日の目標摂取カロリー」を算出することができます。
+    %p --------------------------------------------------------------------
+    .box
+      .box__top
+        ○
+      .box__text
+        減量は「(現在の体重-目標体重)×7200kcal」です。
+  .modal_help__close
+    %button.modal_help__close__bottun 閉じる

@@ -10,6 +10,55 @@
   display:none;
 }
 
+#burn_help_modal {
+  display: none;
+}
+#life_index_help_modal {
+  display: none;
+}
+.modal_help {
+  color: black;
+  height: 510px;
+  width: 350px;
+  background-color: $main_back;
+  margin: 0;
+  padding: 0;
+  position:fixed;
+  z-index: 2;
+  top: 30px;
+  font-size: 13px;
+  display:none;
+  &__top {
+    height: 60px;
+    border-bottom: solid thin $sub_color;
+    color: $top-color;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    line-height: 60px;
+    margin-bottom: 20px;
+  }
+  &__main {
+    padding: 0 15px;
+    line-height: 25px;
+    .box {
+      display: flex;
+    }
+  }
+  &__close {
+    width: 150px;
+    margin: 40px auto 0;
+    &__bottun {
+      width: 150px;
+      height: 30px;
+      background-color: $main_color;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+}
+
 // PC用
 @media screen and (min-width: 767px) { /*ウィンドウ幅が767px以上の場合に適用*/
   .modal_foods {

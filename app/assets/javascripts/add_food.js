@@ -55,7 +55,7 @@ $(function() {
       // 一人前あたりの量を取得
       let quantity = document.getElementById('quantity' + foodId).innerHTML
 
-      // 数値を取得
+      // 量の数値部分を取得
       let num = quantity.replace(/[^0-9]/g, '');
 
       // 数値の部分を削除して単位を取得
@@ -142,12 +142,14 @@ $(function() {
   }
 
   // モーダルを閉じる
-  $('.modal-overlay').click(function() {
-    $('.modal-overlay').fadeOut("fast");
-    $('.modal_foods').fadeOut("fast");
-    $('.modal_new').fadeOut("fast");
-    $('form')[0].reset();
-    $('#new_food_registration').off();
-  })
+  if(document.URL.match(/foods/)){
+    $('.modal-overlay').click(function() {
+      $('.modal-overlay').fadeOut("fast");
+      $('.modal_foods').fadeOut("fast");
+      $('.modal_new').fadeOut("fast");
+      $('form')[0].reset();
+      $('#new_food_registration').off();
+    })
+  }
   
 });
