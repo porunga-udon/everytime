@@ -31,10 +31,11 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 
 ### 消費カロリー計算
 1日の消費カロリーを計算します。
-![消費カロリー](https://i.gyazo.com/549f0e289ac6e92ac18d5066caeaca21.png)
+<img src="https://i.gyazo.com/549f0e289ac6e92ac18d5066caeaca21.png" width="700">
+
 ### 目標摂取カロリー計算
 目標体重と消費カロリーを踏まえ、1日の目標摂取カロリーを計算します。
-![摂取カロリー](https://i.gyazo.com/511da1d029963079d937b44c66f230c6.png)
+<img src="https://i.gyazo.com/511da1d029963079d937b44c66f230c6.png" width="700">
 
 ## データベース設計
 
