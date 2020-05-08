@@ -24,7 +24,7 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 
 ### 1日の摂取カロリー計算
 食べたものを登録することで、その日の摂取カロリーがわかります。
-![1日の摂取カロリー](https://i.gyazo.com/654fa862d13a5fb65fbf5e85f14132d2.png)
+<img src="https://i.gyazo.com/654fa862d13a5fb65fbf5e85f14132d2.png" width="700">
 
 ### レスポンシブデザイン
 <img src="https://i.gyazo.com/20b128241d9ba9ca34f1d6e4c23728f5.png" width="350">
