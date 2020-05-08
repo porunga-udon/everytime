@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: everytime_production
-  username: everytime
-  password: <%= ENV['EVERYTIME_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
