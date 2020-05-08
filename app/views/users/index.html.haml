@@ -29,14 +29,14 @@
           カロリー計算
         .main__center__content--text
           このコンテンツでは、消費カロリー・目標体重・目標期間から、必要なカロリー摂取量を計算できます。
-        - if user_signed_in?
-          .main__center__content--btn
-            = link_to new_user_data_path do
-              %button.btn カロリー計算へ
-        - else
-          .main__center__content--btn
-            = link_to calculation_records_path do
-              %button.btn カロリー計算へ
+        -# - if user_signed_in?
+        -#   .main__center__content--btn
+        -#     = link_to new_user_data_path do
+        -#       %button.btn カロリー計算へ
+        -# - else
+        .main__center__content--btn
+          = link_to calculation_records_path do
+            %button.btn カロリー計算へ
       -# .main__center__content
       -#   .main__center__content--image
       -#     = image_tag "diary.png", size:"140x140", class:"icon"
