@@ -306,6 +306,8 @@
         font-size: 12px;
         &__name {
           width: 130px;
+          white-space: nowrap;
+          overflow: scroll;
         }
         .quantity_select {
           width: 15px;
