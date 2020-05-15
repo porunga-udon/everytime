@@ -10,3 +10,11 @@ Food.create!([
   {name: 'ブロッコリーM', quantity: '1個', calorie: 41, carbo:7, fat: 1, protein: 5}, 
   {name: '卵', quantity: '1個', calorie: 91, carbo:1, fat: 6, protein: 7}
   ])
+
+# 5.times do |n|
+#   User.create!(
+#     nickname: "テスト太郎#{n + 1}",
+#     email: "test#{n + 1}@test.com",
+#     password:"testpass#{n + 1}"
+#   )
+# end
