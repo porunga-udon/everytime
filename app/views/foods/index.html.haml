@@ -20,13 +20,13 @@
           -#     .foods_main__name
           -#       = food.name
           -#     %ul.foods_main__index{id:"nutrition#{food.id}"}
-          -#       %li.foods_main__index--num
+          -#       %li.foods_main__index--num{class:"meal1calorie"}
           -#         = food.calorie
-          -#       %li.foods_main__index--num
+          -#       %li.foods_main__index--num{class:"meal1carbo"}
           -#         = food.carbo
-          -#       %li.foods_main__index--num
+          -#       %li.foods_main__index--num{class:"meal1fat"}
           -#         = food.fat
-          -#       %li.foods_main__index--num
+          -#       %li.foods_main__index--num{class:"meal1protein"}
           -#         = food.protein
           -#       .foods_main__remove
           -#         = icon('fas', 'minus-circle', class: 'remove')
@@ -60,5 +60,9 @@
             = nutrition[:ja]
           .eng
             = nutrition[:eng]
+    .foods_main__output
+      %input.foods_main__output__csv{type:"submit", id:"csv", value:"データ出力"}
+      %a#downloader{:href => "#", :style => "display:none;"}
 
 = render "layouts/modal"
+
