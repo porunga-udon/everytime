@@ -11,7 +11,7 @@
       width: 700px;
       margin: 0 auto;
       background-color: $main_back;
-      padding-bottom: 50px;
+      padding-bottom: 80px;
       &__top {
         color: $font_color;
         height: 90px;
@@ -138,6 +138,18 @@
             border-bottom: solid thin $main_back;
             color: $top_color;
           }
+        }
+      }
+      &__output {
+        width: 150px;
+        margin: 70px auto 0;
+        &__csv {
+          width: 150px;
+          height: 30px;
+          background-color: $main_color;
+          color: white;
+          font-weight: bold;
+          font-size: 15px;
         }
       }
     }
@@ -285,6 +297,18 @@
             border-bottom: solid thin $main_back;
             color: $top_color;
           }
+        }
+      }
+      &__output {
+        width: 150px;
+        margin: 70px auto 0;
+        &__csv {
+          width: 150px;
+          height: 30px;
+          background-color: $main_color;
+          color: white;
+          font-weight: bold;
+          font-size: 15px;
         }
       }
     }
