@@ -49,7 +49,7 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 
 ### Association
 - has_one    :user_data
-- has_many   :diary
+- has_many   :diaries
 
 ## user_dataテーブル
 
@@ -80,9 +80,9 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 |quantity       |text   | |
 
 ### Association
-- has_many :diarys, through: :diary_foods
+- has_many :diaries, through: :diary_foods
 
-## diarysテーブル
+## diariesテーブル
 
 |Column            |Type      |Options                      |
 |------------------|----------|-----------------------------|
