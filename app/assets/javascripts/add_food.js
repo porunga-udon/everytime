@@ -3,7 +3,7 @@ $(function() {
   // フードリストの追加
   function buildHTML(data){
     let food_list = `
-                    <li class="foods_main__food">
+                    <li class="foods_main__food" id="${data.id}">
                       <div class="foods_main__name">
                         ${data.name}
                         ${data.quantity}
@@ -37,7 +37,7 @@ $(function() {
     //画面中央を計算する関数を実行
     modalResize();
 
-    let id = this.id
+    let id = this.id        //食事を指定するid
     $('.modal-overlay').fadeIn("fast");
     $('.modal_foods').fadeIn("fast");
     $(document).off("click", ".fa-plus-circle");
@@ -64,6 +64,7 @@ $(function() {
       // htmlに渡すデータを作成
       let nutrition = document.getElementById('nutrition' + foodId).children
       let data = {
+        id       :foodId,
         class    :'meal' + id,
         name     :document.getElementById('name' + foodId).innerHTML,
         quantity : (serving * num) + unit,
