@@ -60,6 +60,9 @@
             = nutrition[:ja]
           .eng
             = nutrition[:eng]
+
+    .foods_main__registration
+      %input.foods_main__registration__submit{type:"submit", id:"registration", value:"データ登録"}
     .foods_main__output
       %input.foods_main__output__csv{type:"submit", id:"csv", value:"データ出力"}
       %a#downloader{:href => "#", :style => "display:none;"}

@@ -142,8 +142,20 @@
       }
       &__output {
         width: 150px;
-        margin: 70px auto 0;
+        margin: 30px auto 0;
         &__csv {
+          width: 150px;
+          height: 30px;
+          background-color: $main_color;
+          color: white;
+          font-weight: bold;
+          font-size: 15px;
+        }
+      }
+      &__registration {
+        width: 150px;
+        margin: 70px auto 0;
+        &__submit {
           width: 150px;
           height: 30px;
           background-color: $main_color;
@@ -301,8 +313,20 @@
       }
       &__output {
         width: 150px;
-        margin: 70px auto 0;
+        margin: 30px auto 0;
         &__csv {
+          width: 150px;
+          height: 30px;
+          background-color: $main_color;
+          color: white;
+          font-weight: bold;
+          font-size: 15px;
+        }
+      }
+      &__registration {
+        width: 150px;
+        margin: 50px auto 0;
+        &__submit {
           width: 150px;
           height: 30px;
           background-color: $main_color;
