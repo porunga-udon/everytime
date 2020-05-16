@@ -131,12 +131,13 @@ $(function() {
 
     totalData = []
 
-    let totalCalorie = $('#total_calorie')[0].textContent
-    let totalCarbo   = $('#total_carbo')[0].textContent
-    let totalFat     = $('#total_fat')[0].textContent
-    let totalProtein = $('#total_protein')[0].textContent
+    let totalCalorie = Number($('#total_calorie')[0].textContent)
+    let totalCarbo   = Number($('#total_carbo')[0].textContent)
+    let totalFat     = Number($('#total_fat')[0].textContent)
+    let totalProtein = Number($('#total_protein')[0].textContent)
 
     totalData.push('合計値',totalCalorie, totalCarbo, totalFat, totalProtein)
+
     csvArray.push([],totalData,['','カロリー','炭水化物','脂肪','タンパク質'])
 
     // BOM の用意（文字化け対策）
@@ -150,7 +151,7 @@ $(function() {
     var url = (window.URL || window.webkitURL).createObjectURL(blob);
 
     var a = document.getElementById('downloader');
-    a.download = 'data.csv';
+    a.download = date + '.csv';
     a.href = url;
 
     // ダウンロードリンクをクリックする
