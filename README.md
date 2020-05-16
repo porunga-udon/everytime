@@ -84,11 +84,11 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 
 ## diarysテーブル
 
-|Column            |Type   |Options                      |
-|------------------|-------|-----------------------------|
-|registration_date |date   |null: false                  |
-|meal_id           |integer|null: false, foreign_key:true|
-|user_id           |integer|null: false, foreign_key:true|
+|Column            |Type      |Options                      |
+|------------------|----------|-----------------------------|
+|registration_date |date      |null: false                  |
+|meal_id           |integer   |null: false, foreign_key:true|
+|user              |references|null: false, foreign_key:true|
 
 ### Association
 - belongs_to :user
