@@ -34,7 +34,7 @@ $(function() {
   $('.add').click(function(e) {
     e.preventDefault();
 
-    //画面中央を計算する関数を実行
+    // 画面中央を計算する関数を実行
     modalResize();
 
     let id = this.id        //食事を指定するid
