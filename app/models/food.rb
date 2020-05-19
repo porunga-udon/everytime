@@ -3,6 +3,7 @@ class Food < ApplicationRecord
   validates :quantity,         presence: true
   validates :one_of_nutrition, presence: true, format: {with: /\A[0-9]+\z/ }, inclusion: 0..999
 
+  has_many :diary_foods
   has_many :diaries, through: :diary_foods
 
   # インクリメンタルサーチ
