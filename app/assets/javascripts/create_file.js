@@ -140,18 +140,21 @@ $(function() {
 
     csvArray.push([],totalData,['','カロリー','炭水化物','脂肪','タンパク質'])
 
+
     // BOM の用意（文字化け対策）
-    var bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
+    let bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
 
     // CSV データの用意
-    var csv_data = csvArray.map(function(array){return array.join(',')}).join('\r\n');
+    let csv_data = csvArray.map(function(array){return array.join(',')}).join('\r\n');
 
-    var blob = new Blob([bom, csv_data], { type: 'text/csv' });
+    let blob = new Blob([bom, csv_data], { type: 'text/csv' });
 
-    var url = (window.URL || window.webkitURL).createObjectURL(blob);
+    let url = window.URL.createObjectURL(blob);
 
-    var a = document.getElementById('downloader');
-    a.download = date + '.csv';
+    let a = document.getElementById('downloader');
+
+    a.download = date + '.csv';       //日付+.csv
+
     a.href = url;
 
     // ダウンロードリンクをクリックする
