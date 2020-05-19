@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # resources :user_datas, only: [:new, :create]
 
   resources :foods, only: [:index,:create]
+
+  resources :diaries, only: [:create]
   
   resources :records, only: :calculation do
     collection do
