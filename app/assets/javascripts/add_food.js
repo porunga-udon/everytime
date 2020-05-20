@@ -6,6 +6,8 @@ $(function() {
                     <li class="foods_main__food" id="${data.id}">
                       <div class="foods_main__name">
                         ${data.name}
+                      </div>
+                      <div class="foods_main__quantity ${data.serv}">
                         ${data.quantity}
                       </div>
                       <ul class="foods_main__index">
@@ -68,6 +70,7 @@ $(function() {
         class    :'meal' + id,
         name     :document.getElementById('name' + foodId).innerHTML,
         quantity : (serving * num) + unit,
+        serv     :serving,
         calorie  :Number(nutrition[0].textContent) * serving,
         carbo    :Number(nutrition[1].textContent) * serving,
         fat      :Number(nutrition[2].textContent) * serving,

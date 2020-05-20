@@ -60,8 +60,11 @@
         font-size: 12px;
       }
       &__name {
+        width: 25%;
+      }
+      &__quantity {
         border-right: solid thin $main_back;
-        width: 55%;
+        width: 30%;
       }
       &__index {
         display: flex;
@@ -229,8 +232,11 @@
         font-size: 12px;
       }
       &__name {
+        width: 25%;
+      }
+      &__quantity {
+        width: 10%;
         border-right: solid thin $main_back;
-        width: 35%;
       }
       &__index {
         display: flex;
