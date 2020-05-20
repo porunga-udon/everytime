@@ -7,7 +7,7 @@ $(function() {
                       <div class="foods_main__name">
                         ${data.name}
                       </div>
-                      <div class="foods_main__quantity ${data.serv}">
+                      <div class="foods_main__quantity" id="${data.serv}">
                         ${data.quantity}
                       </div>
                       <ul class="foods_main__index">
