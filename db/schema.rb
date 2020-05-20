@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_05_16_022856) do
   create_table "diary_foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "diary_id"
     t.bigint "food_id"
+    t.integer "serving_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["diary_id"], name: "index_diary_foods_on_diary_id"
