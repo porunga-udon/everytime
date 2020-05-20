@@ -1,4 +1,58 @@
 // ダイアリー作成のためのajax通信機能
 $(function() {
-  
+  $('#registration').click(function() {
+    let MealList = [
+      MorningList = $('#foods1').find('.foods_main__food'),
+      LunchList   = $('#foods2').find('.foods_main__food'),
+      DinnerList  = $('#foods3').find('.foods_main__food'),
+      SnackList   = $('#foods4').find('.foods_main__food')
+    ]
+
+    // フード用の配列を作成
+    let AllData         = [
+      MorningData     = [],
+      LunchData       = [],
+      DinnerData      = [],
+      SnackData       = [],
+      MorningServData = [],
+      LunchServData   = [],
+      DinnerServData  = [],
+      SnackServData   = []
+    ]
+
+    // MealListの繰り返し文
+    for (  let i = 0;  i < MealList.length;  i++  ) {
+      // それぞれの食事の繰り返し
+      for (  let m = 0;  m < MealList[i].length;  m++  ) {
+        let foodId    = Number($((MealList[i])[m]).attr('id'))
+        let servingId = Number($((MealList[i])[m]).find('.foods_main__quantity').attr('id'))
+        AllData[i].push(foodId)
+        AllData[i+4].push(servingId) 
+      }
+    }
+
+    $.ajax ({
+      type:'post',
+      url: '/diaries',
+      data: { 
+        food_ids1: MorningData,
+        food_ids2: LunchData,
+        food_ids3: DinnerData,
+        food_ids4: SnackData,
+        serving_ids1: MorningServData,
+        serving_ids2: LunchServData,
+        serving_ids3: DinnerServData,
+        serving_ids4: SnackServData,
+      },
+      dataType: 'json'
+    })
+    // 成功
+    .done(function() {
+      console.log('ok');
+    // 失敗
+    })
+    .fail(function() {
+      console.log('miss');
+    })
+  })
 })
