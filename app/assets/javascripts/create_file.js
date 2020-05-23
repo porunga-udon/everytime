@@ -14,6 +14,8 @@ $(function() {
     let date  = year+'年'+month+'月'+day+'日'
     csvArray.push([date]);
 
+    console.log(date);
+
     csvArray.push(['','カロリー','炭水化物','脂肪','タンパク質']);
 
     // 朝食のフードを配列に追加する処理
@@ -141,24 +143,24 @@ $(function() {
     csvArray.push([],totalData,['','カロリー','炭水化物','脂肪','タンパク質'])
 
 
-    // BOM の用意（文字化け対策）
-    let bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
+    // // BOM の用意（文字化け対策）
+    // let bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
 
-    // CSV データの用意
-    let csv_data = csvArray.map(function(array){return array.join(',')}).join('\r\n');
+    // // CSV データの用意
+    // let csv_data = csvArray.map(function(array){return array.join(',')}).join('\r\n');
 
-    let blob = new Blob([bom, csv_data], { type: 'text/csv' });
+    // let blob = new Blob([bom, csv_data], { type: 'text/csv' });
 
-    let url = window.URL.createObjectURL(blob);
+    // let url = window.URL.createObjectURL(blob);
 
-    let a = document.getElementById('downloader');
+    // let a = document.getElementById('downloader');
 
-    a.download = date + '.csv';       //日付+.csv
+    // a.download = date + '.csv';       //日付+.csv
 
-    a.href = url;
+    // a.href = url;
 
-    // ダウンロードリンクをクリックする
-    $('#downloader')[0].click();
+    // // ダウンロードリンクをクリックする
+    // $('#downloader')[0].click();
 
   })
 })

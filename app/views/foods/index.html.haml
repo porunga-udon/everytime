@@ -19,6 +19,8 @@
           -#   %li.foods_main__food
           -#     .foods_main__name
           -#       = food.name
+          -#     .foods_main__quantity
+          -#       = food.quantity
           -#     %ul.foods_main__index{id:"nutrition#{food.id}"}
           -#       %li.foods_main__index--num{class:"meal1calorie"}
           -#         = food.calorie
@@ -66,6 +68,9 @@
     .foods_main__output
       %input.foods_main__output__csv{type:"submit", id:"csv", value:"データ出力"}
       %a#downloader{:href => "#", :style => "display:none;"}
+
+-# = link_to diaries_path, method: :post  do
+-#   porunga
 
 = render "layouts/modal"
 

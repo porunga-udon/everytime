@@ -1,6 +1,13 @@
 // ダイアリー作成のためのajax通信機能
 $(function() {
   $('#registration').click(function() {
+
+    let now = new Date();
+    let year  = now.getFullYear();
+    let month = now.getMonth()+1;
+    let day   = now.getDate();
+    let date  = month+day
+
     let MealList = [
       MorningList = $('#foods1').find('.foods_main__food'),
       LunchList   = $('#foods2').find('.foods_main__food'),
@@ -25,24 +32,26 @@ $(function() {
       // それぞれの食事の繰り返し
       for (  let m = 0;  m < MealList[i].length;  m++  ) {
         let foodId    = Number($((MealList[i])[m]).attr('id'))
-        let servingId = Number($((MealList[i])[m]).find('.foods_main__quantity').attr('id'))
         AllData[i].push(foodId)
-        AllData[i+4].push(servingId) 
       }
+      for (  let m = 0;  m < MealList[i].length;  m++  ) {
+        let servingId = Number($((MealList[i])[m]).find('.foods_main__quantity').attr('id'))
+        AllData[i].push(servingId) 
+      }
+      // for (  let m = 0;  m < MealList[i].length;  m++  ) {
+      //   let foodId    = Number($((MealList[i])[m]).attr('id'))
+      //   let servingId = Number($((MealList[i])[m]).find('.foods_main__quantity').attr('id'))
+      //   AllData[i].push(foodId)
+      //   AllData[i].push(servingId) 
+      // }
     }
 
     $.ajax ({
       type:'post',
       url: '/diaries',
       data: { 
-        food_ids1: MorningData,
-        food_ids2: LunchData,
-        food_ids3: DinnerData,
-        food_ids4: SnackData,
-        serving_ids1: MorningServData,
-        serving_ids2: LunchServData,
-        serving_ids3: DinnerServData,
-        serving_ids4: SnackServData,
+        date         : now,
+        all_data     : AllData
       },
       dataType: 'json'
     })
