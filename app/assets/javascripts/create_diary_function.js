@@ -3,10 +3,10 @@ $(function() {
   $('#registration').click(function() {
 
     let now = new Date();
-    let year  = now.getFullYear();
-    let month = now.getMonth()+1;
-    let day   = now.getDate();
-    let date  = month+day
+    let year  = String(now.getFullYear());
+    let month = String(now.getMonth()+1);
+    let day   = String(now.getDate());
+    let date  = year + month + day
 
     let MealList = [
       MorningList = $('#foods1').find('.foods_main__food'),
@@ -50,7 +50,7 @@ $(function() {
       type:'post',
       url: '/diaries',
       data: { 
-        date         : now,
+        date         : date,
         all_data     : AllData
       },
       dataType: 'json'
