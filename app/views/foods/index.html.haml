@@ -15,23 +15,23 @@
         .foods_main__meal
           = meal[:name]
         %ul{class:"foods_main__foods", id:"foods#{meal[:id]}"}
-          -# - @foods.each do |food|
-          -#   %li.foods_main__food
-          -#     .foods_main__name
-          -#       = food.name
-          -#     .foods_main__quantity
-          -#       = food.quantity
-          -#     %ul.foods_main__index{id:"nutrition#{food.id}"}
-          -#       %li.foods_main__index--num{class:"meal1calorie"}
-          -#         = food.calorie
-          -#       %li.foods_main__index--num{class:"meal1carbo"}
-          -#         = food.carbo
-          -#       %li.foods_main__index--num{class:"meal1fat"}
-          -#         = food.fat
-          -#       %li.foods_main__index--num{class:"meal1protein"}
-          -#         = food.protein
-          -#       .foods_main__remove
-          -#         = icon('fas', 'minus-circle', class: 'remove')
+          - @porunga.each do |food|
+            %li.foods_main__food{id:food.id}
+              .foods_main__name
+                = food.name
+              .foods_main__quantity{id:food.id}
+                = food.quantity
+              %ul.foods_main__index{id:"nutrition#{food.id}"}
+                %li.foods_main__index--num{class:"meal1calorie"}
+                  = food.calorie
+                %li.foods_main__index--num{class:"meal1carbo"}
+                  = food.carbo
+                %li.foods_main__index--num{class:"meal1fat"}
+                  = food.fat
+                %li.foods_main__index--num{class:"meal1protein"}
+                  = food.protein
+                .foods_main__remove
+                  = icon('fas', 'minus-circle', class: 'remove')
         .foods_main__total
           .foods_main__total__add
             = link_to "#",class:"add", id:"#{meal[:id]}" do
