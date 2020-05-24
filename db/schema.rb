@@ -14,8 +14,11 @@ ActiveRecord::Schema.define(version: 2020_05_16_022856) do
 
   create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "registration_date", null: false
-    t.integer "meal_id", null: false
     t.bigint "user_id", null: false
+    t.integer "morning_index", null: false
+    t.integer "lunch_index", null: false
+    t.integer "dinner_index", null: false
+    t.integer "snack_index", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_diaries_on_user_id"

@@ -4,7 +4,6 @@ class Diary < ApplicationRecord
   has_many :foods, through: :diary_foods
 
   validates :registration_date,        presence:true
-  validates :meal_id,                  presence:true
   validates :user_id,                  presence:true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
