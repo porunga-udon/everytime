@@ -2,12 +2,14 @@
 $(function() {
   $('#registration').click(function() {
 
+    // 日付を作成
     let now = new Date();
     let year  = String(now.getFullYear());
     let month = String(now.getMonth()+1);
     let day   = String(now.getDate());
     let date  = year + month + day
 
+    // フードを取得
     let MealList = [
       MorningList = $('#foods1').find('.foods_main__food'),
       LunchList   = $('#foods2').find('.foods_main__food'),
@@ -15,43 +17,38 @@ $(function() {
       SnackList   = $('#foods4').find('.foods_main__food')
     ]
 
-    // フード用の配列を作成
-    let AllData         = [
-      MorningData     = [],
-      LunchData       = [],
-      DinnerData      = [],
-      SnackData       = [],
-      MorningServData = [],
-      LunchServData   = [],
-      DinnerServData  = [],
-      SnackServData   = []
-    ]
+    let MorningIndex = Number(MorningList.length)
+    let LunchIndex   = Number(LunchList.length) + MorningIndex
+    let DinnerIndex  = Number(DinnerList.length) + LunchIndex
+    let SnackIndex   = Number(SnackList.length) + DinnerIndex
 
-    // MealListの繰り返し文
+    // フードと量用の配列を作成
+    let FoodsData = []
+    let ServData  = []
+
+    // それぞれ配列に追加していく
     for (  let i = 0;  i < MealList.length;  i++  ) {
-      // それぞれの食事の繰り返し
       for (  let m = 0;  m < MealList[i].length;  m++  ) {
         let foodId    = Number($((MealList[i])[m]).attr('id'))
-        AllData[i].push(foodId)
-      }
-      for (  let m = 0;  m < MealList[i].length;  m++  ) {
         let servingId = Number($((MealList[i])[m]).find('.foods_main__quantity').attr('id'))
-        AllData[i].push(servingId) 
+        FoodsData.push(foodId)
+        ServData.push(servingId) 
       }
-      // for (  let m = 0;  m < MealList[i].length;  m++  ) {
-      //   let foodId    = Number($((MealList[i])[m]).attr('id'))
-      //   let servingId = Number($((MealList[i])[m]).find('.foods_main__quantity').attr('id'))
-      //   AllData[i].push(foodId)
-      //   AllData[i].push(servingId) 
-      // }
     }
 
     $.ajax ({
       type:'post',
       url: '/diaries',
-      data: { 
-        date         : date,
-        all_data     : AllData
+      data: {
+        diary:{ 
+          registration_date : date,
+          morning_index     : MorningIndex,
+          lunch_index       : LunchIndex,
+          dinner_index      : DinnerIndex,
+          snack_index       : SnackIndex,
+        },
+        food_ids  : FoodsData,
+        serv_data : ServData
       },
       dataType: 'json'
     })
