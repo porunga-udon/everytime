@@ -1,39 +1,31 @@
 class DiariesController < ApplicationController
 
   def create
-    all_data = params[:all_data]
-    date     = params[:date]
-    binding.pry
+    @diary = Diary.create(converting_data)
+    registration_serv
+  end
 
-    # morning = Diary.new(registration_date:params[:date], meal_id:1, user_id:current_user.id, food_ids:morning_data.first(morning_data/2))
+  private
+  # 文字列を数値に変換して保存するためのメソッド
+  def converting_data
+    diary_params = params[:diary]
+    i = 0
+    converted = []
+    while i < 5 do
+      converted << diary_params.values[i].to_i
+      i += 1
+    end
+    [registration_date:converted[0],morning_index:converted[1],lunch_index:converted[2],dinner_index:converted[3],snack_index:converted[4],user_id:current_user.id,food_ids:params[:food_ids]]
+  end
 
-    # lunch = Diary.new(registration_date:20200517, meal_id:2, user_id:current_user.id, food_ids:params[:food_ids2])
-    # dinner = Diary.new(registration_date:20200517, meal_id:3, user_id:current_user.id, food_ids:params[:food_ids3])
-    # snack = Diary.new(registration_date:20200517, meal_id:4, user_id:current_user.id, food_ids:params[:food_ids4])
-
-    # morning.save
-    # lunch.save
-    # dinner.save
-    # snack.save
-
-    # morning_foods = DiaryFood.where(diary_id:morning.id)
-    # lunch_foods   = DiaryFood.where(diary_id:lunch.id)
-    # dinner_food   = DiaryFood.where(diary_id:dinner.id)
-    # snack_foods   = DiaryFood.where(diary_id:snack.id)
-
-    # servings = params[porunga2]
-    # foods.zip(servings) do |food,serv|
-    #   food.serving_id = serv
-    #   food.save
-    # end
-    # binding.pry
-    # # while i < 5 do
-    # #   i += 1
-    # # end
-    # redirect_to root_path
+  # 登録されたフードの量を登録するメソッド
+  def registration_serv
+    diary_foods = DiaryFood.where(diary_id:@diary[0].id)
+    serv_data   = params[:serv_data]
+    diary_foods.zip(serv_data) do |food,serv|
+      food.serving_id = serv
+      food.save
+    end
   end
 
 end
-
-# Diary.create(registration_date:20200517, meal_id:1, user_id:1)
-# data = Diary.new(registration_date:20200517, meal_id:1, user_id:1, food_ids:[1,2,3], servings:[1,2,3])
