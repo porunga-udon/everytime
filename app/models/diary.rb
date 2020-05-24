@@ -6,6 +6,4 @@ class Diary < ApplicationRecord
   validates :registration_date,        presence:true
   validates :user_id,                  presence:true
 
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :meal
 end
