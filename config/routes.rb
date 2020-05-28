@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :foods, only: [:index,:create]
 
-  resources :diaries, only: [:create]
+  resources :diaries, only: [:index, :create]
   
   resources :records, only: :calculation do
     collection do
