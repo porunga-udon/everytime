@@ -16,22 +16,22 @@
           = meal[:name]
         %ul{class:"foods_main__foods", id:"foods#{meal[:id]}"}
           - @porunga.each do |food|
-            %li.foods_main__food{id:food.id}
-              .foods_main__name
-                = food.name
-              .foods_main__quantity{id:food.id}
-                = food.quantity
-              %ul.foods_main__index{id:"nutrition#{food.id}"}
-                %li.foods_main__index--num{class:"meal1calorie"}
-                  = food.calorie
-                %li.foods_main__index--num{class:"meal1carbo"}
-                  = food.carbo
-                %li.foods_main__index--num{class:"meal1fat"}
-                  = food.fat
-                %li.foods_main__index--num{class:"meal1protein"}
-                  = food.protein
-                .foods_main__remove
-                  = icon('fas', 'minus-circle', class: 'remove')
+            -# %li.foods_main__food{id:food.id}
+            -#   .foods_main__name
+            -#     = food.name
+            -#   .foods_main__quantity{id:food.id}
+            -#     = food.quantity
+            -#   %ul.foods_main__index{id:"nutrition#{food.id}"}
+            -#     %li.foods_main__index--num{class:"meal1calorie"}
+            -#       = food.calorie
+            -#     %li.foods_main__index--num{class:"meal1carbo"}
+            -#       = food.carbo
+            -#     %li.foods_main__index--num{class:"meal1fat"}
+            -#       = food.fat
+            -#     %li.foods_main__index--num{class:"meal1protein"}
+            -#       = food.protein
+            -#     .foods_main__remove
+            -#       = icon('fas', 'minus-circle', class: 'remove')
         .foods_main__total
           .foods_main__total__add
             = link_to "#",class:"add", id:"#{meal[:id]}" do
@@ -68,9 +68,6 @@
     .foods_main__output
       %input.foods_main__output__csv{type:"submit", id:"csv", value:"データ出力"}
       %a#downloader{:href => "#", :style => "display:none;"}
-
--# = link_to diaries_path, method: :post  do
--#   porunga
 
 = render "layouts/modal"
 
