@@ -5,7 +5,7 @@ $(function() {
     // 日付を作成
     let now = new Date();
     let year  = String(now.getFullYear());
-    let month = String(now.getMonth()+1);
+    let month = String("00" + (now.getMonth()+1)).slice(-2);
     let day   = String(now.getDate());
     let date  = year + month + day
 
