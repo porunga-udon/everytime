@@ -28,26 +28,19 @@
               .diary_main__quantity{id:food.id}
                 = food.quantity
               %ul.diary_main__index{id:"nutrition#{food.id}"}
-                %li.diary_main__index--num{class:"meal1calorie"}
+                %li.diary_main__index--num{class:"meal#{meal[:id]}calorie"}
                   = food.calorie
-                %li.diary_main__index--num{class:"meal1carbo"}
+                %li.diary_main__index--num{class:"meal#{meal[:id]}carbo"}
                   = food.carbo
-                %li.diary_main__index--num{class:"meal1fat"}
+                %li.diary_main__index--num{class:"meal#{meal[:id]}fat"}
                   = food.fat
-                %li.diary_main__index--num{class:"meal1protein"}
+                %li.diary_main__index--num{class:"meal#{meal[:id]}protein"}
                   = food.protein
         .diary_main__total
-          -# .diary_main__total__add
-          -#   = link_to "#",class:"add", id:"#{meal[:id]}" do
-          -#     フード追加
-          -# %ul.diary_main__total__data{id:"meal#{meal[:id]}"}
-          -#   - @nutrition.each do |nutrition|
-          -#     %li.diary_main__total__data--num{class:"data_#{nutrition[:column]}"}
-                -# = data
-          -# %ul.diary_main__total__data
-            -# - @data.each do |data|
-              -# %li.diary_main__total__data--num
-                -# = data
+          %ul.diary_main__total__data{id:"meal#{meal[:id]}"}
+            - @nutrition.each do |nutrition|
+              %li.diary_main__total__data--num{class:"data_#{nutrition[:column]}"}
+            
     .diary_main__all
       .diary_main__all__text
         合計
