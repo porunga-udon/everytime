@@ -22,6 +22,33 @@
         border-bottom: solid 1px rgb(180, 179, 179);
         margin-bottom: 40px;
       }
+      &__date {
+        width: 250px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        background-color: $main_color;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0 auto 40px;
+        display: flex;
+        &--side {
+          border-right:solid white;
+          border-left:solid white;
+          width: 35px;
+          height: 30px;
+          .arrow {
+            font-size: 28px;
+            line-height: 30px;
+            cursor: pointer;
+          }
+        }
+        &--selected {
+          width: 200px;
+          
+        }
+      }
       &__nutrition {
         width: 46.5%;
         margin: 0 0 0 auto;

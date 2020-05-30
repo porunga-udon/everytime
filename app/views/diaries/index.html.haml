@@ -1,0 +1,74 @@
+.diary_wrapper
+
+  .diary_main
+    .diary_main__top
+      ダイアリー
+    .diary_main__date
+      .diary_main__date--side
+        = icon 'fas', 'caret-left', class:"arrow", id:"previous-day"
+      .diary_main__date--selected
+      .diary_main__date--side
+        = icon 'fas', 'caret-right', class:"arrow", id:"next-day"
+    %ul.diary_main__nutrition
+      - @nutrition.each do |nutrition|
+        %li.diary_main__nutrition__block
+          .ja
+            = nutrition[:ja]
+          .eng
+            = nutrition[:eng]
+    - @meals.zip(@all_foods) do |meal, foods|
+      .diary_main_content
+        .diary_main__meal
+          = meal[:name]
+        %ul{class:"diary_main__foods", id:"foods#{meal[:id]}"}
+          - foods.each do |food|
+            %li.diary_main__food{id:food.id}
+              .diary_main__name
+                = food.name
+              .diary_main__quantity{id:food.id}
+                = food.quantity
+              %ul.diary_main__index{id:"nutrition#{food.id}"}
+                %li.diary_main__index--num{class:"meal1calorie"}
+                  = food.calorie
+                %li.diary_main__index--num{class:"meal1carbo"}
+                  = food.carbo
+                %li.diary_main__index--num{class:"meal1fat"}
+                  = food.fat
+                %li.diary_main__index--num{class:"meal1protein"}
+                  = food.protein
+        .diary_main__total
+          -# .diary_main__total__add
+          -#   = link_to "#",class:"add", id:"#{meal[:id]}" do
+          -#     フード追加
+          -# %ul.diary_main__total__data{id:"meal#{meal[:id]}"}
+          -#   - @nutrition.each do |nutrition|
+          -#     %li.diary_main__total__data--num{class:"data_#{nutrition[:column]}"}
+                -# = data
+          -# %ul.diary_main__total__data
+            -# - @data.each do |data|
+              -# %li.diary_main__total__data--num
+                -# = data
+    .diary_main__all
+      .diary_main__all__text
+        合計
+      %ul.diary_main__all__data
+        -@nutrition.each do |nutrition|
+          %li.diary_main__all__data--num{id:"total_#{nutrition[:column]}"}
+            0
+      -# %ul.diary_main__all__data
+      -#   - @data.each do |data|
+      -#     %li.diary_main__all__data--num
+      -#       = data
+    %ul.diary_main__nutrition
+      - @nutrition.each do |nutrition|
+        %li.diary_main__nutrition__block
+          .ja
+            = nutrition[:ja]
+          .eng
+            = nutrition[:eng]
+
+    .diary_main__registration
+      %input.diary_main__registration__submit{type:"submit", id:"registration", value:"データ更新"}
+    .diary_main__output
+      %input.diary_main__output__csv{type:"submit", id:"csv", value:"データ出力"}
+      %a#downloader{:href => "#", :style => "display:none;"}
