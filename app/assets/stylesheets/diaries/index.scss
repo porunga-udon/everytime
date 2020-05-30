@@ -105,7 +105,7 @@
         width: 80.7%;
         height: 30px;
         line-height: 35px;
-        padding-left: 20px;
+        padding-left: 46.4%;
         padding-right: 30px;
         margin-left: 50px;
         margin-bottom: 30px;
@@ -114,14 +114,6 @@
         border-bottom: solid 1px $sub_color;
         font-size: 13px;
         font-weight: bold;
-        &__add {
-          width: 329px;
-          .add {
-            text-decoration: none;
-            color: $top_color;
-            font-weight: bold;
-          }
-        }
         &__data {
           display: flex;
           &--num {
