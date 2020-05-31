@@ -7,6 +7,7 @@ $(function() {
     let month = String("00" + (now.getMonth()+1)).slice(-2);
     let day   = String(now.getDate());
     let date  = year + "-" + month + "-" + day
+    let porunga   = year + month + day
     $(".diary_main__date--selected").text(date);
 
     // 一日戻る
@@ -16,7 +17,22 @@ $(function() {
       let month = String("00" + (now.getMonth()+1)).slice(-2);
       let day   = String(now.getDate());
       let date  = year + "-" + month + "-" + day
+      let ajax_day =  year + month + day
       $(".diary_main__date--selected").text(date);
+      $.ajax ({
+        type:'get',
+        url: '/diaries',
+        data: { day : ajax_day },
+        dataType: 'json'
+      })
+      // 成功
+      .done(function() {
+        console.log('ok');
+      })
+      // 失敗
+      .fail(function() {
+        console.log('miss');
+      })
     })
 
     // 一日進める

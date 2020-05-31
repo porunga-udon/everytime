@@ -16,31 +16,42 @@
             = nutrition[:ja]
           .eng
             = nutrition[:eng]
-    - @meals.zip(@all_foods) do |meal, foods|
-      .diary_main_content
-        .diary_main__meal
-          = meal[:name]
-        %ul{class:"diary_main__foods", id:"foods#{meal[:id]}"}
-          - foods.each do |food|
-            %li.diary_main__food{id:food.id}
-              .diary_main__name
-                = food.name
-              .diary_main__quantity{id:food.id}
-                = food.quantity
-              %ul.diary_main__index{id:"nutrition#{food.id}"}
-                %li.diary_main__index--num{class:"meal#{meal[:id]}calorie"}
-                  = food.calorie
-                %li.diary_main__index--num{class:"meal#{meal[:id]}carbo"}
-                  = food.carbo
-                %li.diary_main__index--num{class:"meal#{meal[:id]}fat"}
-                  = food.fat
-                %li.diary_main__index--num{class:"meal#{meal[:id]}protein"}
-                  = food.protein
-        .diary_main__total
-          %ul.diary_main__total__data{id:"meal#{meal[:id]}"}
-            - @nutrition.each do |nutrition|
-              %li.diary_main__total__data--num{class:"data_#{nutrition[:column]}"}
-            
+    - if @diary.present?
+      - @meals.zip(@all_foods) do |meal, foods|
+        .diary_main_content
+          .diary_main__meal
+            = meal[:name]
+          %ul{class:"diary_main__foods", id:"foods#{meal[:id]}"}
+            - foods.each do |food|
+              %li.diary_main__food{id:food.id}
+                .diary_main__name
+                  = food.name
+                .diary_main__quantity{id:food.id}
+                  = food.quantity
+                %ul.diary_main__index{id:"nutrition#{food.id}"}
+                  %li.diary_main__index--num{class:"meal#{meal[:id]}calorie"}
+                    = food.calorie
+                  %li.diary_main__index--num{class:"meal#{meal[:id]}carbo"}
+                    = food.carbo
+                  %li.diary_main__index--num{class:"meal#{meal[:id]}fat"}
+                    = food.fat
+                  %li.diary_main__index--num{class:"meal#{meal[:id]}protein"}
+                    = food.protein
+          .diary_main__total
+            %ul.diary_main__total__data{id:"meal#{meal[:id]}"}
+              - @nutrition.each do |nutrition|
+                %li.diary_main__total__data--num{class:"data_#{nutrition[:column]}"}
+    - else
+      - @meals.each do |meal|
+        .diary_main_content
+          .diary_main__meal
+            = meal[:name]
+          %ul{class:"diary_main__foods", id:"foods#{meal[:id]}"}
+          .diary_main__total
+            %ul.diary_main__total__data{id:"meal#{meal[:id]}"}
+              - @nutrition.each do |nutrition|
+                %li.diary_main__total__data--num{class:"data_#{nutrition[:column]}"}
+
     .diary_main__all
       .diary_main__all__text
         合計
