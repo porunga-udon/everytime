@@ -8,6 +8,10 @@ class DiariesController < ApplicationController
     if @diary.present?
       create_foods_array
     end
+    respond_to do |format|
+      format.json
+      format.html
+    end
   end
 
   def create
@@ -16,7 +20,7 @@ class DiariesController < ApplicationController
   end
 
 
-  
+
   private
   # 文字列を数値に変換して保存するためのメソッド
   def converting_data
@@ -59,14 +63,13 @@ class DiariesController < ApplicationController
 
   # 食べ物の配列を作成
   def create_foods_array
-    a_foods = @diary.foods
-        @all_foods = [
-          @m_foods = a_foods[0..@diary.morning_index-1],
-          @l_foods = a_foods[@diary.morning_index..@diary.lunch_index-1],
-          @d_foods = a_foods[@diary.lunch_index..@diary.dinner_index-1],
-          @s_foods = a_foods[@diary.dinner_index..@diary.snack_index-1]
-        ]
+    @a_foods = @diary.foods
+    @all_foods = [
+      @m_foods = @a_foods[0..@diary.morning_index-1],
+      @l_foods = @a_foods[@diary.morning_index..@diary.lunch_index-1],
+      @d_foods = @a_foods[@diary.lunch_index..@diary.dinner_index-1],
+      @s_foods = @a_foods[@diary.dinner_index..@diary.snack_index-1]
+    ]
   end
-
 
 end
