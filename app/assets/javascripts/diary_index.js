@@ -65,11 +65,7 @@ $(function() {
           }
           totalCaliculate();
         } else {
-          $('.data_calorie').text('');
-          $('.data_carbo').text('');
-          $('.data_fat').text('');
-          $('.data_protein').text('');
-          $('.diary_main__all__data--num').text(0);
+          Nodata();
         }
       })
       // 失敗
@@ -109,7 +105,7 @@ $(function() {
           }
           totalCaliculate();
         } else {
-          totalCaliculate();
+          Nodata();
         }
       })
       // 失敗
@@ -179,5 +175,13 @@ $(function() {
       }
     }
   }
-
+  
+  // データがない場合の合計表示部分
+  let Nodata = function() {
+    $('.data_calorie').text('');
+    $('.data_carbo').text('');
+    $('.data_fat').text('');
+    $('.data_protein').text('');
+    $('.diary_main__all__data--num').text(0);
+  }
 });
