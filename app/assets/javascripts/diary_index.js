@@ -37,7 +37,7 @@ $(function() {
     let date  = year + "-" + month + "-" + day
     $(".diary_main__date--selected").text(date);
 
-    // 一日戻る
+    // 一日戻る--------------------------------
     $('#previous-day').click(function() {
       now.setDate(now.getDate() - 1);
       let year  = String(now.getFullYear());
@@ -74,10 +74,7 @@ $(function() {
       })
     })
 
-
-
-
-    // 一日進める
+    // 一日進める---------------------------
     $('#next-day').click(function() {
       now.setDate(now.getDate() + 1);
       let year  = String(now.getFullYear());
