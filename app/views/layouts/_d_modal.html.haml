@@ -1,1 +1,27 @@
-.modal-overlay
+.modal-overlay{class:"modal_close"}
+
+.modal_diary
+  .modal_diary__top
+    データ出力
+  .modal_diary__main
+    .modal_diary___main--start
+      = select_tag 'start_year', options_for_select([*2020..2030]), class:"day_select"
+      年
+      = select_tag 'start_month', options_for_select([*1..12]), class:"day_select"
+      月
+      = select_tag 'start_day', options_for_select([*1..31]), class:"day_select"
+      日
+      から
+    .modal_diary___main--finish
+      = select_tag 'finish_year', options_for_select([*2020..2030]), class:"day_select"
+      年
+      = select_tag 'finish_month', options_for_select([*1..12]), class:"day_select"
+      月
+      = select_tag 'finish_day', options_for_select([*1..31]), class:"day_select"
+      日
+      まで
+    .modal_diary__bottom
+      .modal_diary__bottom--csv
+        %button.modal_diary__bottom__button{id:'create_csv'} 出力する
+      .modal_diary__bottom--close
+        %button.modal_diary__bottom__button{class:'modal_close'} 閉じる

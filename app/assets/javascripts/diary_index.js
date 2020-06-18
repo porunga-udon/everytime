@@ -181,4 +181,62 @@ $(function() {
     $('.data_protein').text('');
     $('.diary_main__all__data--num').text(0);
   }
+
+  // 出力モーダルの表示-------------------------------
+  $('.add_modal').click(function() {
+    modalResize();
+    $('.modal-overlay').fadeIn("fast");
+    $('.modal_diary').fadeIn("fast");
+    $('#create_csv').click(function() {
+      let sy = $('#start_year   option:selected').text();
+      let sm = ("00" + $('#start_month  option:selected').text()).slice(-2);
+      let sd = ("00" + $('#start_day    option:selected').text()).slice(-2);
+      let fy = $('#finish_year  option:selected').text();
+      let fm = ("00" + $('#finish_month option:selected').text()).slice(-2);
+      let fd = ("00" + $('#finish_day   option:selected').text()).slice(-2);
+
+      let start_date   = sy + sm + sd
+      let finish_date  = fy + fm + fd
+
+      $('.modal-overlay').fadeOut("fast");
+      $('.modal_diary').fadeOut("fast");
+      $("#create_csv").off();
+    })
+  })
+
+
+
+
+
+
+
+
+
+
+
+  //モーダルの位置を中央に調整するメソッド
+  $(window).resize(modalResize);
+  function modalResize(){
+    // ディスプレイ
+    let width = $(window).width();
+    let height = $(window).height();
+
+    // ダイアリー出力モーダル
+    let foodWeight = $(".modal_diary").outerWidth();
+    let foodHeight = $(".modal_diary").outerHeight();
+
+    //取得した値をcssに追加する
+    $(".modal_diary").css({
+      "left": ((width- foodWeight)/2) + "px",
+      "top": ((height - foodHeight)/2) + "px"
+    });
+  }
+
+  // モーダルを閉じる
+  $('.modal_close').click(function() {
+    $('.modal-overlay').fadeOut("fast");
+    $('.modal_diary').fadeOut("fast");
+    $("#create_csv").off();
+  })
+
 });

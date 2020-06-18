@@ -1,0 +1,46 @@
+.modal_diary {
+  display: none;
+  color: black;
+  height: 300px;
+  width: 350px;
+  background-color: $main_back;
+  margin: 0;
+  padding: 0;
+  position:fixed;
+  z-index: 2;
+  top: 30px;
+  font-size: 13px;
+  &__top {
+    height: 60px;
+    border-bottom: solid thin $sub_color;
+    color: $top-color;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    line-height: 60px;
+    margin-bottom: 20px;
+  }
+  &__main {
+    width: 290px;
+    margin: 0 auto;
+    font-size: 17px;
+    .day_select {
+      height: 25px;
+    }
+  }
+  &__bottom {
+    width: 150px;
+    margin: 40px auto 0;
+    &--close {
+      margin-top: 20px;
+    }
+    &__button {
+      width: 150px;
+      height: 30px;
+      background-color: $main_color;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+}
