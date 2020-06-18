@@ -20,10 +20,11 @@ class DiariesController < ApplicationController
   end
 
   def output
-    @start   = params[:start_date]
-    @finish  = params[:finish_date]
-    @diaries = Diary.where(registration_date: @start..@finish)
-    binding.pry
+    @diaries = Diary.where(registration_date: params[:start_date]..params[:finish_date])
+    respond_to do |format|
+      format.json
+      format.html
+    end
   end
 
   private
