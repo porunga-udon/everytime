@@ -19,7 +19,12 @@ class DiariesController < ApplicationController
     registration_serv
   end
 
-
+  def output
+    @start   = params[:start_date]
+    @finish  = params[:finish_date]
+    @diaries = Diary.where(registration_date: @start..@finish)
+    binding.pry
+  end
 
   private
   # 文字列を数値に変換して保存するためのメソッド
