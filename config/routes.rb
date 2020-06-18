@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   resources :foods, only: [:index,:create]
 
-  resources :diaries, only: [:index, :create]
+  resources :diaries, only: [:index, :create, :output] do
+    collection do
+      get 'output', to: 'diaries#output'
+    end
+  end
   
   resources :records, only: :calculation do
     collection do
