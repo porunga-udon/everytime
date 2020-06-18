@@ -197,6 +197,25 @@ $(function() {
 
       let start_date   = sy + sm + sd
       let finish_date  = fy + fm + fd
+      $.ajax ({
+        type:'get',
+        url: '/diaries/output',
+        data: { 
+          start_date : start_date,
+          finish_date : finish_date
+          },
+        dataType: 'json'
+      })
+      // 成功
+      .done(function(data) {
+        console.log(data);
+        console.log(data[0]);
+        console.log(data[0][0])
+      })
+      // 失敗
+      .fail(function() {
+        console.log('miss');
+      })
 
       $('.modal-overlay').fadeOut("fast");
       $('.modal_diary').fadeOut("fast");
