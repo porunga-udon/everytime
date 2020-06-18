@@ -20,7 +20,16 @@ class DiariesController < ApplicationController
   end
 
   def output
-    @diaries = Diary.where(registration_date: params[:start_date]..params[:finish_date])
+    diaries = Diary.where(registration_date: params[:start_date]..params[:finish_date])
+    @diaries = []
+    # binding.pry
+    diaries.each do |diary|
+      @diary = diary
+      create_foods_array
+      @all_foods.unshift(diary.registration_date)
+      @diaries << @all_foods
+    end
+    # binding.pry
     respond_to do |format|
       format.json
       format.html
