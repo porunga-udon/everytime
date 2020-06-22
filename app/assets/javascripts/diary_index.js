@@ -37,7 +37,7 @@ $(function() {
     let date  = year + "-" + month + "-" + day
     $(".diary_main__date--selected").text(date);
 
-    // 一日戻る--------------------------------
+    // 一日戻る------------------------------------------------------------------------
     $('#previous-day').click(function() {
       now.setDate(now.getDate() - 1);
       let year  = String(now.getFullYear());
@@ -74,7 +74,7 @@ $(function() {
       })
     })
 
-    // 一日進める---------------------------
+    // 一日進める---------------------------------------------------------------------------
     $('#next-day').click(function() {
       now.setDate(now.getDate() + 1);
       let year  = String(now.getFullYear());
@@ -111,7 +111,7 @@ $(function() {
       })
     })
 
-// --------------ここから合計値の計算----------------
+// --------------ここから合計値の計算---------------------------------------------------
     let totalCaliculate = function() {
       // 食事ごとに繰り返し処理をする
       for (  let i = 1;  i < 5;  i++  ) {
@@ -182,7 +182,7 @@ $(function() {
     $('.diary_main__all__data--num').text(0);
   }
 
-  // csv出力モーダルの表示-------------------------------
+  // csv出力モーダルの表示---------------------------------------------------------------
   $('.add_modal').click(function() {
     modalResize();
     $('.modal-overlay').fadeIn("fast");
@@ -208,7 +208,7 @@ $(function() {
           },
         dataType: 'json'
       })
-      // 成功
+      // 成功----------------------------------------------------------------------------
       .done(function(data) {
 
         console.log(data[0]);
@@ -303,7 +303,8 @@ $(function() {
       // ダウンロードリンクをクリックする
       $('#downloader')[0].click();
       })
-      // 失敗
+
+      // 失敗----------------------------------------------------------------------------
       .fail(function() {
         console.log('miss');
       })
@@ -314,16 +315,6 @@ $(function() {
       $("#create_csv").off();
     })
   })
-
-
-
-
-
-
-
-
-
-
 
   //モーダルの位置を中央に調整するメソッド
   $(window).resize(modalResize);
