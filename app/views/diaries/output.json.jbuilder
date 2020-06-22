@@ -4,7 +4,6 @@ json.array! @diaries do |diary_foods|
       json.date         foods
     else
       json.array! foods do |food|
-        json.id         food.id
         json.name       food.name
         json.quantity   food.quantity
         json.calorie    food.calorie
