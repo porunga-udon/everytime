@@ -211,8 +211,6 @@ $(function() {
       // 成功----------------------------------------------------------------------------
       .done(function(data) {
 
-        console.log(data[0]);
-
         let CsvArray  = []
         let MealName  = [['朝食'],['昼食'],['夕食'],['間食']]
         let Nutrition = ["", "量","カロリー", "炭水化物", "脂肪", "タンパク質"]
@@ -280,9 +278,7 @@ $(function() {
           }
           CsvArray.push([], ['合計値','', TotalCalorie, TotalCarbo, TotalFat, TotalProtein]);
         }
-
-        console.log(CsvArray);
-
+      
       // BOM の用意（文字化け対策）
       let bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
 
@@ -296,7 +292,7 @@ $(function() {
       let a = document.getElementById('downloader');
   
       // a.download = date + '.csv';       //日付+.csv
-      a.download = 'ポルンガ.csv';
+      a.download = sy+'年'+sm+'月'+sd+'日〜'+fy+'年'+fm+'月'+fd+'日.csv'
   
       a.href = url;
   
